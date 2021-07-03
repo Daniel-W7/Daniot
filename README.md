@@ -1,9 +1,18 @@
 # Kunkka
 wordpress theme
+
 本Wordpress主题以牧风大神的Kunkka 1.06为基础改进而来，经Alatelee 二次修改 ，又经神韵博客 三次修改。
+
+目前由Daniel继续维护
+
 牧风 github项目 已失效
+
 Alatelee github项目 https://github.com/AgateLee/Kunkka
+
 神韵 github项目 https://github.com/ShenYun1/Kunkka
+
+Daniel github项目 https://github.com/Daniel-W7/Kunkka
+
 ToDo
 回复中的表情符号没有被替换
 版本说明/更新日志
