@@ -259,4 +259,9 @@ return array_diff( $plugins, array( 'wpemoji' ) );
 } else {
 return array();
 }}
-?>
+/**配置登录页面加密
+add_action('login_enqueue_scripts','login_protection');
+		function login_protection() {
+		if($_GET['daniel'] != 'danielw')    // loginhere为验证字段名,self-string为验证字段值
+		header('Location: www.danielw7.com');
+}
