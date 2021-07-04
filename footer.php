@@ -21,22 +21,21 @@
     })
 </script>
 		<!-- 一言结束 -->
-	<?php if (wp_is_mobile()){ ?>
+<!--友情链接部分-->
+	<?php 
+		/*if (wp_is_mobile()){ ?>
 	<div class="widget-links">
 		<ul>
 			<li>友情链接:<?php wp_list_bookmarks('title_li=&categorize=0'); ?></li>	
 		</ul>
 	</div>
     <?php } else { ?>
-    <?php } ?>
-        <p>&copy; Copyright 2018-2019 <a href="/"><?php bloginfo( 'name' ); ?></a> All Rights Reserved. Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a></p> 
-
-
-        <p>&nbsp</p>
+    <?php } */?>
+        <p>&copy; Copyright &copy; 2018 - <?php echo date('Y'); ?>  <a href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a> All Rights Reserved.  Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a></p> 
+         <p>&nbsp</p>
     </div>
 </div>
 <!-- #footer -->
 <?php wp_footer(); ?>
-
 </body>
 </html>

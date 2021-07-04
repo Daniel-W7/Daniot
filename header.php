@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="zh-CN">	
 <head>
 
   <?php mutheme_head(); ?>
@@ -92,14 +91,14 @@ echo '</h2>';
                 'container_class' => 'top-menu'
             ) ); ?>
         </div>
-        <form method="get" class="search-form" action="<?php bloginfo( 'home' ); ?>/">
+	<form method="get" class="search-form" action="<?php bloginfo( 'home' ); ?>/">
             <input type="text" name="s" class="search-input" placeholder="<?php _e( 'Search keyword', MUTHEME_NAME ); ?>" />
             <button type="submit" class="search-submit">
                 <span class="mutheme-search"></span>
             </button>
         </form>
         <div class="mobile-menu-button"></div>
-    </div>
+  </div> 
 </div>
 <!-- #header -->
 <div id="content">
