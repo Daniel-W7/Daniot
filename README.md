@@ -3,6 +3,7 @@
 * 牧风 github项目 已失效
 * Alatelee github项目 https://github.com/AgateLee/Kunkka
 * 神韵 github项目 https://github.com/ShenYun1/Kunkka
+* Daniel github项目https://github.com/Daniel-W7/Kunkka/
 
 
 
