@@ -7,7 +7,7 @@ get_header(); ?>
     <div id="primary" class="full-page">
         <div class="errorDiv">
             <a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?>" rel="home">
-                <img src="<?php echo mutheme_image( '404.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="55%"; />
+                <img src="<?php echo daniot_image( '404.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="55%"; />
             </a>
             <p><h1>Not Found</h1></p>
             <p>对不起，您访问的界面已迁移或不存在，即将返回首页</p>

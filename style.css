@@ -1,9 +1,9 @@
 /*
-Theme Name: Kunkka
+Theme Name: Daniot
 Version: 1.0.6
-Author: MuFeng
-Author URI: http://mufeng.me
-Description: 主题问题或建议可以联系, QQ群: 205883766, 邮箱: mufeng.me@gmail.com
+Author: Daniel
+Author URI: https://www.danios.com（海源）
+Description: 主题问题或建议，可以访问https://www.danios.com(海源)查看帮助或联系我们
 */
 
 *, :after, :before {
@@ -207,7 +207,7 @@ font-size: 18px;
 }
 
 @font-face {
-    font-family: 'mutheme-kunkka';
+    font-family: 'daniot-daniot';
 	font-display: auto;
     src: url('public/fonts/icomoon.eot?5z92sk');
     src: url('public/fonts/icomoon.eot?5z92sk#iefix') format('embedded-opentype'),
@@ -218,13 +218,13 @@ font-size: 18px;
     font-style: normal;
 }
 
-.mutheme-search,
+.daniot-search,
 .breadcrumb-arrow,
 .dropdown > a:before,
 .mobile-menu-button,
-[class^="mutheme-"] > a:before {
+[class^="daniot-"] > a:before {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'mutheme-kunkka';
+    font-family: 'daniot-daniot';
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -237,13 +237,13 @@ font-size: 18px;
     -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="mutheme-"] > a,
+[class^="daniot-"] > a,
 .dropdown > a {
     padding-left: 17px;
     position: relative;
 }
 
-[class^="mutheme-"] > a:before,
+[class^="daniot-"] > a:before,
 .dropdown > a:before {
     position: absolute;
     left: 0;
@@ -252,175 +252,175 @@ font-size: 18px;
     vertical-align: middle;
 }
 
-.mutheme-download > a:before {
+.daniot-download > a:before {
     content: "\e609"
 }
 
-.mutheme-email > a:before {
+.daniot-email > a:before {
     content: "\e60b"
 }
 
-.mutheme-tag > a:before {
+.daniot-tag > a:before {
     content: "\e602"
 }
 
-.mutheme-comment > a:before {
+.daniot-comment > a:before {
     content: "\e60c"
 }
 
-.mutheme-layers > a:before {
+.daniot-layers > a:before {
     content: "\e900"
 }
 
-.mutheme-air > a:before {
+.daniot-air > a:before {
     content: "\e901"
 }
 
-.mutheme-aircraft > a:before {
+.daniot-aircraft > a:before {
     content: "\e902"
 }
 
-.mutheme-drive > a:before {
+.daniot-drive > a:before {
     content: "\e905"
 }
 
-.mutheme-colours > a:before {
+.daniot-colours > a:before {
     content: "\e903"
 }
 
-.mutheme-compass > a:before {
+.daniot-compass > a:before {
     content: "\e904"
 }
 
-.mutheme-game > a:before {
+.daniot-game > a:before {
     content: "\e906"
 }
 
-.mutheme-home > a:before {
+.daniot-home > a:before {
     content: "\e907"
 }
 
-.mutheme-image > a:before {
+.daniot-image > a:before {
     content: "\e908"
 }
 
-.mutheme-medal > a:before {
+.daniot-medal > a:before {
     content: "\e909"
 }
 
-.mutheme-mic > a:before {
+.daniot-mic > a:before {
     content: "\e90a"
 }
 
-.mutheme-rocket > a:before {
+.daniot-rocket > a:before {
     content: "\e90b"
 }
 
-.mutheme-shop > a:before {
+.daniot-shop > a:before {
     content: "\e90c"
 }
 
-.mutheme-user > a:before {
+.daniot-user > a:before {
     content: "\e90d"
 }
 
-.mutheme-instagram > a:before {
+.daniot-instagram > a:before {
     content: "\e90e"
 }
 
-.mutheme-shop > a:before {
+.daniot-shop > a:before {
     content: "\e90c"
 }
 
-.mutheme-music > a:before {
+.daniot-music > a:before {
     content: "\f001"
 }
 
-.mutheme-video > a:before {
+.daniot-video > a:before {
     content: "\f16a"
 }
 
-.mutheme-apple > a:before {
+.daniot-apple > a:before {
     content: "\f179"
 }
 
-.mutheme-windows > a:before {
+.daniot-windows > a:before {
     content: "\f17a"
 }
 
-.mutheme-android > a:before {
+.daniot-android > a:before {
     content: "\f17b"
 }
 
-.mutheme-twitter > a:before {
+.daniot-twitter > a:before {
     content: "\f099"
 }
 
-.mutheme-github > a:before {
+.daniot-github > a:before {
     content: "\f09b"
 }
 
-.mutheme-feed > a:before {
+.daniot-feed > a:before {
     content: "\f09e"
 }
 
-.mutheme-tablet > a:before {
+.daniot-tablet > a:before {
     content: "\f10a"
 }
 
-.mutheme-mobile > a:before {
+.daniot-mobile > a:before {
     content: "\f10b"
 }
 
-.mutheme-linux > a:before {
+.daniot-linux > a:before {
     content: "\f17c"
 }
 
-.mutheme-dribbble > a:before {
+.daniot-dribbble > a:before {
     content: "\f17d"
 }
 
-.mutheme-weibo > a:before {
+.daniot-weibo > a:before {
     content: "\f18a"
 }
 
-.mutheme-wordpress > a:before {
+.daniot-wordpress > a:before {
     content: "\f19a"
 }
 
-.mutheme-qq > a:before {
+.daniot-qq > a:before {
     content: "\f1d6"
 }
 
-.mutheme-wechat > a:before {
+.daniot-wechat > a:before {
     content: "\f1d7"
 }
 
-.mutheme-facebook > a:before {
+.daniot-facebook > a:before {
     content: "\f230"
 }
 
-.mutheme-safari > a:before {
+.daniot-safari > a:before {
     content: "\f267"
 }
 
-.mutheme-chrome > a:before {
+.daniot-chrome > a:before {
     content: "\f268"
 }
 
-.mutheme-firefox > a:before {
+.daniot-firefox > a:before {
     content: "\f269"
 }
 
-.mutheme-opera > a:before {
+.daniot-opera > a:before {
     content: "\f26a"
 }
 
-.mutheme-ie > a:before {
+.daniot-ie > a:before {
     content: "\f26b"
 }
 
-.mutheme-edge > a:before {
+.daniot-edge > a:before {
     content: "\f282"
 }
 
@@ -429,7 +429,7 @@ font-size: 18px;
     content: "\f0c9"
 }
 
-.mutheme-search:before {
+.daniot-search:before {
     content: "\f002";
 }
 

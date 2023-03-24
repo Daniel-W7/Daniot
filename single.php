@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div id="primary">
         <div class="breadcrumb-navigation">
-            <a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e('Home', MUTHEME_NAME);?></a>
+            <a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e('Home', daniot_NAME);?></a>
             <?php the_post(); ?>
             <span class="breadcrumb-arrow"></span><?php if($category=get_the_category($post->ID)) echo (get_category_parents($category[0]->term_id, TRUE, '<span class="breadcrumb-arrow"></span>')); ?><?php the_title(); ?>
             <?php rewind_posts(); ?>
@@ -16,19 +16,19 @@
                     <ul class="inline-ul">
 						<li class="inline-li"><?php echo get_the_author() ?></li>
 						<li class="inline-li"><span class="post-span">·</span></li>
-                        <li class="inline-li"><?php echo mutheme_time_since(strtotime($post->post_date_gmt)); ?></li>
+                        <li class="inline-li"><?php echo daniot_time_since(strtotime($post->post_date_gmt)); ?></li>
 						<li class="inline-li"><span class="post-span">·</span></li>
                         <li class="inline-li">
                             <?php the_category( ' , ' ); ?>
                         </li>
-                        <?php mutheme_views(); ?>
+                        <?php daniot_views(); ?>
                         <li class="inline-li">
                             <span class="post-span">·</span>
                         </li>
                         <li class="inline-li">
-                            <?php comments_popup_link( __('0 reply', MUTHEME_NAME), __('1 reply', MUTHEME_NAME), __('% replies', MUTHEME_NAME) ); ?>
+                            <?php comments_popup_link( __('0 reply', daniot_NAME), __('1 reply', daniot_NAME), __('% replies', daniot_NAME) ); ?>
                         </li>
-                        <?php mutheme_likes(); ?>
+                        <?php daniot_likes(); ?>
                     </ul>
                 </div>
                 <div class="post-body clearfix">

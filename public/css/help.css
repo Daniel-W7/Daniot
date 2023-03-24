@@ -1,13 +1,13 @@
 /*
-Theme Name: Kunkka
-Version: 1.0.0
-Author: MuFeng
-Author URI: http://mufeng.me
-Description: 主题问题或建议可以联系, QQ群: 205883766, 邮箱: mufeng.me@gmail.com
+Theme Name: daniot
+Version: 见functions.php中daniot-version定义的版本号
+Author: Daniel
+Author URI: https://www.danios.com（海源）
+Description: 若有主题问题或建议,可以访问www.danios.com（海源）查看帮助或联系我们
 */
 
 @font-face {
-    font-family: 'mutheme-kunkka';
+    font-family: 'daniot-daniot';
     src: url('../fonts/icomoon.eot?dpiorb');
     src: url('../fonts/icomoon.eot?dpiorb#iefix') format('embedded-opentype'),
     url('../fonts/icomoon.ttf?dpiorb') format('truetype'),
@@ -17,9 +17,9 @@ Description: 主题问题或建议可以联系, QQ群: 205883766, 邮箱: mufeng
     font-style: normal;
 }
 
-[class^="mutheme-"] {
+[class^="daniot-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'mutheme-kunkka';
+    font-family: 'daniot-daniot';
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -32,179 +32,179 @@ Description: 主题问题或建议可以联系, QQ群: 205883766, 邮箱: mufeng
     -moz-osx-font-smoothing: grayscale;
 }
 
-.mutheme-layers:before {
+.daniot-layers:before {
     content: "\e900"
 }
 
-.mutheme-air:before {
+.daniot-air:before {
     content: "\e901"
 }
 
-.mutheme-aircraft:before {
+.daniot-aircraft:before {
     content: "\e902"
 }
 
-.mutheme-drive:before {
+.daniot-drive:before {
     content: "\e905"
 }
 
-.mutheme-colours:before {
+.daniot-colours:before {
     content: "\e903"
 }
 
-.mutheme-compass:before {
+.daniot-compass:before {
     content: "\e904"
 }
 
-.mutheme-game:before {
+.daniot-game:before {
     content: "\e906"
 }
 
-.mutheme-home:before {
+.daniot-home:before {
     content: "\e907"
 }
 
-.mutheme-image:before {
+.daniot-image:before {
     content: "\e908"
 }
 
-.mutheme-medal:before {
+.daniot-medal:before {
     content: "\e909"
 }
 
-.mutheme-mic:before {
+.daniot-mic:before {
     content: "\e90a"
 }
 
-.mutheme-rocket:before {
+.daniot-rocket:before {
     content: "\e90b"
 }
 
-.mutheme-shop:before {
+.daniot-shop:before {
     content: "\e90c"
 }
 
-.mutheme-user:before {
+.daniot-user:before {
     content: "\e90d"
 }
 
-.mutheme-instagram:before {
+.daniot-instagram:before {
     content: "\e90e"
 }
 
-.mutheme-shop:before {
+.daniot-shop:before {
     content: "\e90c"
 }
 
-.mutheme-music:before {
+.daniot-music:before {
     content: "\f001"
 }
 
-.mutheme-video:before {
+.daniot-video:before {
     content: "\f16a"
 }
 
-.mutheme-apple:before {
+.daniot-apple:before {
     content: "\f179"
 }
 
-.mutheme-windows:before {
+.daniot-windows:before {
     content: "\f17a"
 }
 
-.mutheme-android:before {
+.daniot-android:before {
     content: "\f17b"
 }
 
-.mutheme-twitter:before {
+.daniot-twitter:before {
     content: "\f099"
 }
 
-.mutheme-github:before {
+.daniot-github:before {
     content: "\f09b"
 }
 
-.mutheme-feed:before {
+.daniot-feed:before {
     content: "\f09e"
 }
 
-.mutheme-tablet:before {
+.daniot-tablet:before {
     content: "\f10a"
 }
 
-.mutheme-mobile:before {
+.daniot-mobile:before {
     content: "\f10b"
 }
 
-.mutheme-linux:before {
+.daniot-linux:before {
     content: "\f17c"
 }
 
-.mutheme-dribbble:before {
+.daniot-dribbble:before {
     content: "\f17d"
 }
 
-.mutheme-weibo:before {
+.daniot-weibo:before {
     content: "\f18a"
 }
 
-.mutheme-wordpress:before {
+.daniot-wordpress:before {
     content: "\f19a"
 }
 
-.mutheme-qq:before {
+.daniot-qq:before {
     content: "\f1d6"
 }
 
-.mutheme-wechat:before {
+.daniot-wechat:before {
     content: "\f1d7"
 }
 
-.mutheme-facebook:before {
+.daniot-facebook:before {
     content: "\f230"
 }
 
-.mutheme-safari:before {
+.daniot-safari:before {
     content: "\f267"
 }
 
-.mutheme-chrome:before {
+.daniot-chrome:before {
     content: "\f268"
 }
 
-.mutheme-firefox:before {
+.daniot-firefox:before {
     content: "\f269"
 }
 
-.mutheme-opera:before {
+.daniot-opera:before {
     content: "\f26a"
 }
 
-.mutheme-ie:before {
+.daniot-ie:before {
     content: "\f26b"
 }
 
-.mutheme-edge:before {
+.daniot-edge:before {
     content: "\f282"
 }
 
-.mutheme-download:before {
+.daniot-download:before {
     content: "\e609"
 }
 
-.mutheme-email:before {
+.daniot-email:before {
     content: "\e60b"
 }
 
-.mutheme-tag:before {
+.daniot-tag:before {
     content: "\e602"
 }
 
-.mutheme-comment:before {
+.daniot-comment:before {
     content: "\e60c"
 }
 
-.mutheme-icon-list li {
+.daniot-icon-list li {
     display: inline-block;
     width: 19.1%;
     margin-bottom: 10px;

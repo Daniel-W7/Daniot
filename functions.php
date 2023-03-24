@@ -2,28 +2,30 @@
 /**
  * @name Functions
  * @description Wordpress theme default functions file
- * @version     1.0.0
- * @author      mufeng (http://mufeng.me)
- * @url https://mufeng.me/wordpress-mobile-theme-kunkka.html
- * @package     Kunkka
+ * @version     见functions.php中daniot-version定义的版本号
+ * @author      Daniel
+ * @url https://www.danios.com
+ * @package     Daniot
  **/
 
 /**
  * Define constants
  */
-define( 'MUTHEME_NAME', 'Kunkka' );
-define( 'MUTHEME_VERSION', '1.2.2' );
-define( 'MUTHEME_PATH', dirname( __FILE__ ) );
-define( "MUTHEME_THEME_URL", get_bloginfo( 'template_directory' ) );
+//主题名称
+define( 'daniot_NAME', 'Daniot' );
+//主题版本
+define( 'daniot_VERSION', '1.0.0' );
+define( 'daniot_PATH', dirname( __FILE__ ) );
+define( "daniot_THEME_URL", get_bloginfo( 'template_directory' ) );
 //WordPress SSL at 2016/12/29 update
 
 /**
  * Import core function files
  */
-get_template_part( 'functions/mutheme-basic' );
-get_template_part( 'functions/mutheme-function' );
-get_template_part( 'functions/mutheme-widget' );
-get_template_part( 'functions/mutheme-main' );
+get_template_part( 'functions/daniot-basic' );
+get_template_part( 'functions/daniot-function' );
+get_template_part( 'functions/daniot-widget' );
+get_template_part( 'functions/daniot-main' );
 
 /**
  * Add rss feed
@@ -58,10 +60,10 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link' );
 /**
  * Remove default wordpress widgets
  */
-if( !mutheme_settings('register_widget') ){
-    add_action( 'widgets_init', 'mutheme_unregister_default_widgets', 1 );
+if( !daniot_settings('register_widget') ){
+    add_action( 'widgets_init', 'daniot_unregister_default_widgets', 1 );
 }
-function mutheme_unregister_default_widgets() {
+function daniot_unregister_default_widgets() {
     unregister_widget( 'WP_Widget_Pages' );
     unregister_widget( 'WP_Widget_Calendar' );
     unregister_widget( 'WP_Widget_Archives' );
@@ -89,8 +91,8 @@ if ( function_exists( 'add_image_size' ) ) {
  */
 if ( function_exists( 'register_nav_menus' ) ) {
     register_nav_menus( array(
-        'top-menu'    => __( 'Top menu', MUTHEME_NAME ),
-        'global-menu' => __( 'Dropdown menu', MUTHEME_NAME )
+        'top-menu'    => __( 'Top menu', daniot_NAME ),
+        'global-menu' => __( 'Dropdown menu', daniot_NAME )
     ) );
 }
 
@@ -109,7 +111,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 /**
  * Register theme languages files
  */
-load_theme_textdomain( MUTHEME_NAME, mutheme_path( 'languages' ) );
+load_theme_textdomain( daniot_NAME, daniot_path( 'languages' ) );
 
 //替换Gavatar头像地址
 function get_ssl_avatar($avatar) {
@@ -207,9 +209,9 @@ add_action( 'pre_ping', 'no_self_ping' );
 },9);
 
 //复制出提示
-function zm_copyright_tips() {
+/*function zm_copyright_tips() {
 	echo '<script>document.body.oncopy=function(){alert("复制成功！转载请务必保留原文链接，申明来源，谢谢合作！");}</script>';
-}
+}*/
 add_action( 'wp_footer', 'zm_copyright_tips', 100 );
 //评论添加验证码
 function spam_protection_math(){

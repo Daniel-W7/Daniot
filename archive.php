@@ -2,16 +2,16 @@
     <div id="primary">
         <div class="breadcrumb-navigation">
             <a rel="bookmark" href="<?php echo home_url(); ?>"
-               title="<?php bloginfo( 'name' ); ?>"><?php _e( 'Home', MUTHEME_NAME ); ?></a>
+               title="<?php bloginfo( 'name' ); ?>"><?php _e( 'Home', daniot_NAME ); ?></a>
             <?php the_post(); ?>
             <?php if ( is_category() ) {
                 ?>
-                <span class="breadcrumb-arrow"></span><?php _e( 'Category', MUTHEME_NAME ); ?><span
+                <span class="breadcrumb-arrow"></span><?php _e( 'Category', daniot_NAME ); ?><span
                     class="breadcrumb-arrow"></span>
             <?php
             } else if ( is_tag() ) {
                 ?>
-                <span class="breadcrumb-arrow"></span><?php _e( 'Tag', MUTHEME_NAME ); ?><span
+                <span class="breadcrumb-arrow"></span><?php _e( 'Tag', daniot_NAME ); ?><span
                     class="breadcrumb-arrow"></span>
             <?php
             } ?>
@@ -20,7 +20,7 @@
         </div>
         <div id="postlist">
             <?php if ( have_posts() ):while ( have_posts() ) : the_post();
-                $post_thumbnail = mutheme_thumbnail( 'index-thumbnail', 130, 130 );
+                $post_thumbnail = daniot_thumbnail( 'index-thumbnail', 130, 130 );
                 $post_class     = 'post';
 
                 if ( $post_thumbnail["exist"] ) {
@@ -40,7 +40,7 @@
                     <div class="post-meta">
                         <ul class="inline-ul">
                             <li class="inline-li">
-                                <?php echo mutheme_time_since(strtotime($post->post_date_gmt)); ?>
+                                <?php echo daniot_time_since(strtotime($post->post_date_gmt)); ?>
                             </li>
                             <li class="inline-li">
                                 <span class="post-span">·</span>
@@ -48,14 +48,14 @@
                             <li class="inline-li">
                                 <?php the_category( ' , ' ); ?>
                             </li>
-                            <?php mutheme_views(); ?>
+                            <?php daniot_views(); ?>
                             <li class="inline-li">
                                 <span class="post-span">·</span>
                             </li>
                             <li class="inline-li">
-                                <?php comments_popup_link( __('0 reply', MUTHEME_NAME), __('1 reply', MUTHEME_NAME), __('% replies', MUTHEME_NAME) ); ?>
+                                <?php comments_popup_link( __('0 reply', daniot_NAME), __('1 reply', daniot_NAME), __('% replies', daniot_NAME) ); ?>
                             </li>
-                            <?php mutheme_likes(); ?>
+                            <?php daniot_likes(); ?>
                         </ul>
                     </div>
                     <div class="post-body">
@@ -63,17 +63,17 @@
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink() ?>" rel="bookmark">
                                     <img class="lazy"
-                                         src="<?php echo mutheme_cdn( mutheme_image( 'placeholder.png' ) ); ?>"
-                                         data-original="<?php echo mutheme_cdn( $post_thumbnail ); ?>"
+                                         src="<?php echo daniot_cdn( daniot_image( 'placeholder.png' ) ); ?>"
+                                         data-original="<?php echo daniot_cdn( $post_thumbnail ); ?>"
                                          alt="<?php the_title(); ?>" width="130" height="130"/>
                                 </a>
                             </div>
                             <div class="post-content">
-                                <?php printf( '<p>%s</p>', mutheme_excerpt( $post->post_content, 320 ) ); ?>
+                                <?php printf( '<p>%s</p>', daniot_excerpt( $post->post_content, 320 ) ); ?>
                             </div>
                         <?php else : ?>
                             <div class="post-content">
-                                <?php printf( '<p>%s</p>', mutheme_excerpt( $post->post_content, 250 ) ); ?>
+                                <?php printf( '<p>%s</p>', daniot_excerpt( $post->post_content, 250 ) ); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -82,7 +82,7 @@
             endif; ?>
         </div>
         <div class="pagenavi">
-            <?php mutheme_pagenavi(); ?>
+            <?php daniot_pagenavi(); ?>
         </div>
     </div>
 <?php get_sidebar(); ?>

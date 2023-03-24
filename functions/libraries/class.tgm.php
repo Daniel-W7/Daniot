@@ -90,7 +90,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
           *
           * @var string
           */
-        public $menu = 'mutheme_plugins';
+        public $menu = 'daniot_plugins';
 
         /**
          * Text domain for localization support.
@@ -334,7 +334,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             foreach ( $this->plugins as $plugin ) {
                 if ( ! is_plugin_active( $plugin['file_path'] ) ) {
                     add_submenu_page(
-                        'mutheme_setting',                // Parent menu slug
+                        'daniot_setting',                // Parent menu slug
                         $this->strings['page_title'],           // Page title
                         $this->strings['menu_title'],           // Menu title
                         'edit_theme_options',                   // Capability

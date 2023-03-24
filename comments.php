@@ -1,12 +1,12 @@
 <div id="comments">
   <?php
     if ( isset( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
-        die(__('Please don\'t directly loading the page, thanks!', MUTHEME_NAME));
+        die(__('Please don\'t directly loading the page, thanks!', daniot_NAME));
     }
 
     if ( post_password_required() ) { ?>
     <p class="nocomments">
-      <?php _e( 'This article requires a password, enter the password to access.' , MUTHEME_NAME); ?>
+      <?php _e( 'This article requires a password, enter the password to access.' , daniot_NAME); ?>
     </p>
     <?php
         return;
@@ -14,26 +14,26 @@
     ?>
       <?php if ( have_comments() ) : ?>
         <div class="comments-data">
-          <?php _e( 'Comments' , MUTHEME_NAME); ?> (
+          <?php _e( 'Comments' , daniot_NAME); ?> (
             <?php echo $post->comment_count;?>) </div>
         <div class="comments-container">
           <ol class="commentlist clearfix">
-            <?php wp_list_comments( 'type=comment&callback=mutheme_comment' ); ?>
+            <?php wp_list_comments( 'type=comment&callback=daniot_comment' ); ?>
           </ol>
           <div class="comments-data comments-data-footer clearfix">
             <?php if ( 'open' != $post->comment_status ) : ?>
-              <h2 class="comments-title"><?php _e( 'Comments Closed.' , MUTHEME_NAME); ?></h2>
+              <h2 class="comments-title"><?php _e( 'Comments Closed.' , daniot_NAME); ?></h2>
               <?php else : ?>
                 <div class="comment-topnav">
                   <?php paginate_comments_links( 'prev_text=«&next_text=»' ); ?>
                 </div>
-                <h2 class="comments-title"><?php _e( 'Leave a reply' , MUTHEME_NAME); ?></h2>
+                <h2 class="comments-title"><?php _e( 'Leave a reply' , daniot_NAME); ?></h2>
                 <?php endif; ?>
           </div>
         </div>
         <?php else : ?>
           <?php if ( 'open' != $post->comment_status ) : ?>
-            <h2 class="comments-title"><?php _e( 'Comments Closed.' , MUTHEME_NAME); ?></h2>
+            <h2 class="comments-title"><?php _e( 'Comments Closed.' , daniot_NAME); ?></h2>
             <?php endif; ?>
               <?php endif; ?>
                 <?php if ( comments_open() ) : ?>
@@ -44,23 +44,23 @@
                       </div>
                       <?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
                         <p class="title welcome">
-                          <?php printf( __( 'You need <a href="%s">login</a> to reply.', MUTHEME_NAME ), wp_login_url( get_permalink() ) ); ?></p>
+                          <?php printf( __( 'You need <a href="%s">login</a> to reply.', daniot_NAME ), wp_login_url( get_permalink() ) ); ?></p>
                         <?php else : ?>
                           <?php if ( is_user_logged_in() ) : ?>
                             <p class="title welcome">
-                              <?php printf( __( 'Welcome <a href="%1$s">%2$s</a> back，', MUTHEME_NAME ), get_option( 'siteurl' ) . '/wp-admin/profile.php', $user_identity ); ?>
-                                <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e( 'Log out of this account' , MUTHEME_NAME); ?>">
-                                  <?php _e( 'Log out »' , MUTHEME_NAME); ?>
+                              <?php printf( __( 'Welcome <a href="%1$s">%2$s</a> back，', daniot_NAME ), get_option( 'siteurl' ) . '/wp-admin/profile.php', $user_identity ); ?>
+                                <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e( 'Log out of this account' , daniot_NAME); ?>">
+                                  <?php _e( 'Log out »' , daniot_NAME); ?>
                                 </a>
                             </p>
                             <?php else : ?>
                               <?php if ( $comment_author != "" ): ?>
                                 <p class="title welcome">
-                                  <?php _e( 'Welcome', MUTHEME_NAME ); ?>
+                                  <?php _e( 'Welcome', daniot_NAME ); ?>
                                     <?php printf('<strong>%s</strong>.', $comment_author ) ?>
-                                      <?php _e( 'back, ' , MUTHEME_NAME); ?>
+                                      <?php _e( 'back, ' , daniot_NAME); ?>
                                         <a id="edit_author">
-                                          <?php _e( 'Edit »' , MUTHEME_NAME); ?>
+                                          <?php _e( 'Edit »' , daniot_NAME); ?>
                                         </a> <span class="cancel-comment-reply"><?php cancel_comment_reply_link() ?></span> </p>
                                 <div id="author_info" class="author_hide">
                                   <script type="text/javascript">
@@ -93,7 +93,7 @@
 
                                       <div style="display:inline-block;float:right">
 										                                          <?php spam_protection_math();?>
-                                        <input id="submit" type="submit" name="submit" value="<?php _e( 'Submit / Ctrl+Enter', MUTHEME_NAME ); ?>" class="submit" /> </div>
+                                        <input id="submit" type="submit" name="submit" value="<?php _e( 'Submit / Ctrl+Enter', daniot_NAME ); ?>" class="submit" /> </div>
                                       <?php comment_id_fields(); ?>
                                         <?php do_action( 'comment_form', $post->ID ); ?>
                     </form>

@@ -4,7 +4,7 @@
 <form method="get" class="search-form" action="https://cn.bing.com/?ensearch=1&FORM=BEHPTB">
       <input type="text" class="search-input" id="bing" placeholder="请输入bing搜索关键词"   onkeydown="if(event.keyCode==13){return Search('bing');}"/>
 	   	    <button type="submit" class="search-submit" onClick="return Search('bing');">
-				<span class="mutheme-search"></span>
+				<span class="daniot-search"></span>
 			</button>
 		</form>	
 		<script type="text/javascript">
@@ -23,14 +23,14 @@
 <!-- 站内搜索配置 -->
 <div id="primary">
         <div class="breadcrumb-navigation">
-            <a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', MUTHEME_NAME ); ?></a>
-            <span class="breadcrumb-arrow"></span><?php _e( 'Search keyword', MUTHEME_NAME ); ?>
+            <a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e( 'Home', daniot_NAME ); ?></a>
+            <span class="breadcrumb-arrow"></span><?php _e( 'Search keyword', daniot_NAME ); ?>
             <span class="breadcrumb-arrow"></span>
             <?php the_search_query(); ?>
         </div>
         <div id="postlist">
             <?php if ( have_posts() ):while ( have_posts() ) : the_post();
-                $post_thumbnail = mutheme_thumbnail( 'index-thumbnail', 130, 130 );
+                $post_thumbnail = daniot_thumbnail( 'index-thumbnail', 130, 130 );
                 $post_class     = 'post';
 
                 if ( $post_thumbnail["exist"] ) {
@@ -58,14 +58,14 @@
                             <li class="inline-li">
                                 <?php the_category( ' , ' ); ?>
                             </li>
-                            <?php mutheme_views(); ?>
+                            <?php daniot_views(); ?>
                             <li class="inline-li">
                                 <span class="post-span">|</span>
                             </li>
                             <li class="inline-li">
                                 <?php comments_popup_link( '0 reply', '1 reply', '% replies' ); ?>
                             </li>
-                            <?php mutheme_likes(); ?>
+                            <?php daniot_likes(); ?>
                         </ul>
                     </div>
                     <div class="post-body">
@@ -73,17 +73,17 @@
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink() ?>" rel="bookmark">
                                     <img class="lazy"
-                                         src="<?php echo mutheme_cdn( mutheme_image( 'placeholder.png' ) ); ?>"
-                                         data-original="<?php echo mutheme_cdn( $post_thumbnail ); ?>"
+                                         src="<?php echo daniot_cdn( daniot_image( 'placeholder.png' ) ); ?>"
+                                         data-original="<?php echo daniot_cdn( $post_thumbnail ); ?>"
                                          alt="<?php the_title(); ?>" width="130" height="130"/>
                                 </a>
                             </div>
                             <div class="post-content">
-                                <?php printf( '<p>%s</p>', mutheme_excerpt( $post->post_content, 320 ) ); ?>
+                                <?php printf( '<p>%s</p>', daniot_excerpt( $post->post_content, 320 ) ); ?>
                             </div>
                         <?php else : ?>
                             <div class="post-content">
-                                <?php printf( '<p>%s</p>', mutheme_excerpt( $post->post_content, 250 ) ); ?>
+                                <?php printf( '<p>%s</p>', daniot_excerpt( $post->post_content, 250 ) ); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -91,7 +91,7 @@
             <?php endwhile; endif; ?>
         </div>
         <div class="pagenavi">
-            <?php mutheme_pagenavi(); ?>
+            <?php daniot_pagenavi(); ?>
         </div>
     </div>
 	

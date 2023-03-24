@@ -21,7 +21,7 @@ get_header(); ?>
                     'unit'     => 'px',
                     'smallest' => 12,
                     'largest'  => 12,
-                    'number'   => mutheme_settings( 'tag_number' ),
+                    'number'   => daniot_settings( 'tag_number' ),
                     'format'   => 'flat',
                     'orderby'  => 'count',
                     'order'    => 'DESC'

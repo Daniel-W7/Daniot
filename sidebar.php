@@ -1,6 +1,6 @@
 <div id="sidebar">
     <?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'sidebar' ) ) : ?>
-        <p><?php _e( 'Please set up widgets at dashboard!', MUTHEME_NAME ); ?></p>
+        <p><?php _e( 'Please set up widgets at dashboard!', daniot_NAME ); ?></p>
     <?php endif; ?>
 	<!-- 博客统计 -->
 <div class="widget">
