@@ -11,6 +11,8 @@
 /**
  * Define constants
  */
+//关闭一般报错通知
+//ini_set("error_reporting","E_ALL & ~E_NOTICE");
 //主题名称
 define( 'daniot_NAME', 'Daniot' );
 //主题版本
@@ -267,3 +269,4 @@ add_action('login_enqueue_scripts','login_protection');
 		if($_GET['daniel'] != 'danielw')    // loginhere为验证字段名,self-string为验证字段值
 		header('Location: www.danielw7.com');
 }
+**/

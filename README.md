@@ -6,7 +6,9 @@
 * Alatelee github项目 https://github.com/AgateLee/Kunkka
 * 神韵 github项目 https://github.com/ShenYun1/Kunkka
 * Daniel github项目https://github.com/Daniel-W7/Kunkka/
-
+开发测试的的php环境：                             
+  php7.4 php7.4-cli php7.4-common php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-readline  
+注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用     
 
 
 
@@ -18,6 +20,8 @@
 * 解决程序版本比较老的问题
 * 解决页面菜单栏下拉菜单问题
 * 重新定义版本和说明文件，简化使用和理解
+* 通过调整php_mbstring的配置及说明，使主题可正常显示
+* 修复“WP_Widget 类在 daniot_widget_populars 中的调用构造方法自 4.3.0 版本起以弃用！请使用 __construct() 代替”报错
 
 **v1.23_daniel**
 
