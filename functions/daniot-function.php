@@ -12,11 +12,10 @@
 add_action( 'admin_bar_menu', 'daniot_toolbar_link', 999 );
 function daniot_toolbar_link( $wp_admin_bar ) {
     $args = array(
+        'id'    => 'daniot-settings',
         'title' => 'daniot 设置',
         'href'  => admin_url( 'admin.php?page=daniot_setting' ),
-        'meta'  => array(
-            'title' => 'daniot 设置'
-        )
+        'meta'  => array( 'title' => 'daniot 设置' )
     );
     $wp_admin_bar->add_node( $args );
 }

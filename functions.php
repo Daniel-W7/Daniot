@@ -237,7 +237,7 @@ function spam_protection_pre($commentdata){
 	}
 	return $commentdata;
 }
-if($comment_data['comment_type']==''){
+if(empty($comment_data['comment_type'])){
 	add_filter('preprocess_comment','spam_protection_pre');
 }
 /**

@@ -7,7 +7,6 @@
  * @url https://www.danios.com（海源）
  * @package     Daniot
  **/
-
 // Enqueue theme css and javascript file
 add_action( 'wp_enqueue_scripts', 'daniot_scripts' );
 function daniot_scripts() {
@@ -24,7 +23,6 @@ function daniot_scripts() {
         wp_enqueue_script( 'daniot-archives', daniot_script( 'archives.js' ), null, daniot_VERSION, false );
     }
 }
-
 // Theme setting part
 if ( is_admin() ) {
     get_template_part( 'functions/libraries/class.tgm' );
