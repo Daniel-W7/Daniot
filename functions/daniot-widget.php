@@ -9,7 +9,7 @@
  * @package     Daniot
  **/
 class daniot_widget_populars extends WP_Widget {
-    function daniot_widget_populars() {
+    function __construct() {
         $widget_ops = array( 'description' => 'daniot：热门文章（需要WP-PostViews插件）' );
          parent::__construct( 'daniot_widget_populars', 'daniot：热门文章', $widget_ops );
     }
@@ -84,7 +84,7 @@ function daniot_widget_populars_init() {
 }
 
 class daniot_widget_modified extends WP_Widget {
-    function daniot_widget_modified() {
+    function __construct() {
         $widget_ops = array( 'description' => 'daniot：最近更新的文章' );
          parent::__construct( 'daniot_widget_modified', 'daniot：最近更新', $widget_ops );
     }
@@ -160,7 +160,7 @@ function daniot_widget_modified_init() {
 }
 
 class daniot_widget_comment extends WP_Widget {
-    function daniot_widget_comment() {
+    function __construct() {
         $widget_ops = array( 'description' => 'daniot：最新评论' );
          parent::__construct( 'daniot_widget_comment', 'daniot：最新评论', $widget_ops );
     }
@@ -229,7 +229,7 @@ function daniot_widget_comment_init() {
 }
 
 class daniot_widget_links extends WP_Widget {
-    function daniot_widget_links() {
+    function __construct() {
         $widget_ops = array( 'description' => 'daniot：友情链接' );
          parent::__construct( 'daniot_widget_links', 'daniot：友情链接', $widget_ops );
     }
