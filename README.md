@@ -1,15 +1,14 @@
-<<<<<<< HEAD
-=======
-# Kunkka
-* 本Wordpress主题以[牧风](https://mufeng.me/)大神的Kunkka 1.06为基础改进而来，经[Alatelee](http://agatelee.cn) 二次修改	，又经[神韵博客](https://51shenyun.cn) 三次修改。
+# Daniot
+* 本Wordpress主题以[牧风](https://mufeng.me/)的Kunkka 1.06为基础改进而来，经[Alatelee](http://agatelee.cn) 二次修改	，又经[神韵博客](https://51shenyun.cn) 三次修改。
 * 牧风 github项目 已失效
 * Alatelee github项目 https://github.com/AgateLee/Kunkka
 * 神韵 github项目 https://github.com/ShenYun1/Kunkka
-* Daniel github项目https://github.com/Daniel-W7/Kunkka/
-开发测试的环境：
+* Daniel github项目https://github.com/Daniel-W7/Daniot/
+*开发测试的环境：
 php版本及安装包：                             
   php7.4 php7.4-cli php7.4-common php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-readline  
-注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用     
+注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用 
+
 wordpress版本：6.1
 
 
