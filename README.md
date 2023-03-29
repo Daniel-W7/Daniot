@@ -17,11 +17,11 @@
 **v1.0.0_daniel**
 
 * 修改主体名称为daniot（海源）
-* 解决程序版本比较老的问题
 * 解决页面菜单栏下拉菜单问题
 * 重新定义版本和说明文件，简化使用和理解
 * 通过调整php_mbstring的配置及说明，使主题可正常显示
 * 修复“WP_Widget 类在 daniot_widget_populars 中的调用构造方法自 4.3.0 版本起以弃用！请使用 __construct() 代替”报错，以及部分语法错误
+* 发现wp-zan插件会导致报错，之后再处理,小工具移除.recentcomments样式,移除CSS/JS版本号两个选项会导致报错
 
 **v1.23_daniel**
 

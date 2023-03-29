@@ -159,11 +159,14 @@ function no_self_ping( &$links ) {
 }
 add_action( 'pre_ping', 'no_self_ping' );
 //移除预获取DNS
-	function remove_dns_prefetch( $hints, $relation_type ) {
-		if ( 'dns-prefetch' === $relation_type ) { 
-		return array_diff( wp_dependencies_unique_hosts(), $hints ); } return $hints; }
-		add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );
+	function remove_dns_prefetch( $hints, $relation_type ) 
+	{
+		if ( 'dns-prefetch' === $relation_type ) 
+		{ return array_diff( wp_dependencies_unique_hosts(), $hints ); } 
 		
+		return $hints; 
+	}
+	add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );	
 	remove_action('admin_print_scripts','print_emoji_detection_script');
 	remove_action('admin_print_styles','print_emoji_styles');
 	remove_action('wp_head','print_emoji_detection_script',	7);
@@ -183,9 +186,8 @@ add_action( 'pre_ping', 'no_self_ping' );
 	remove_action('wp_head', 'wp_oembed_add_discovery_links');
 	remove_action('wp_head', 'wp_oembed_add_host_js');//EMbed结束
 	add_filter('xmlrpc_enabled', '__return_false');
-	// add_filter('use_block_editor_for_post', '__return_false');//禁用古腾堡
-	// remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );//禁用古腾堡前端
-
+	//add_filter('use_block_editor_for_post', '__return_false');//禁用古腾堡
+	//remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );//禁用古腾堡前端
 	add_action('admin_menu', function (){
 	global $menu, $submenu;
 	// 移除设置菜单下的隐私子菜单。

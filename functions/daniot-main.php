@@ -14,8 +14,8 @@ function daniot_scripts() {
 
     //Enqueue jQuery and avoid conflict
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', daniot_script( 'jquery.min.js' ), false, '1.8.2' );
-    wp_enqueue_script( 'jquery', false, false, '1.8.2' );
+    wp_register_script( 'jquery', daniot_script( 'jquery-3.6.4.min.js' ), false, '3.6.4' ,false);
+    wp_enqueue_script( 'jquery', false, false, '3.6.4' ,false);
 
     wp_enqueue_script( 'daniot-all', daniot_script( 'all.js' ), null, daniot_VERSION, false );
 
