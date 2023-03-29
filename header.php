@@ -91,12 +91,6 @@ echo '</h2>';
                 'container_class' => 'top-menu'
             ) ); ?>
         </div>
-	<form method="get" class="search-form" action="<?php bloginfo( 'home' ); ?>/">
-            <input type="text" name="s" class="search-input" placeholder="<?php _e( 'Search keyword', daniot_NAME ); ?>" />
-            <button type="submit" class="search-submit">
-                <span class="daniot-search"></span>
-            </button>
-        </form>
         <div class="mobile-menu-button"></div>
   </div> 
 </div>

@@ -440,10 +440,6 @@ msgstr "搜索关键词"
 msgid "Stick"
 msgstr "置顶"
 
-#: sidebar.php:3
-msgid "Please set up widgets at dashboard!"
-msgstr "请在后台设置小工具!"
-
 #~ msgid "Nickname"
 #~ msgstr "昵称"
 

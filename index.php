@@ -72,5 +72,4 @@
             <?php daniot_pagenavi(); ?>
         </div>
     </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -14,7 +14,6 @@
 function daniot_head() {
     ?>
     <?php if ( is_home() ) { ?><title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title><?php } ?>
-    <?php if ( is_search() ) { ?><title><?php _e( 'Search&#34;', daniot_NAME );the_search_query();echo "&#34;"; ?> - <?php bloginfo( 'name' ); ?></title><?php } ?>
     <?php if ( is_single() ) { ?><title><?php echo trim( wp_title( '', 0 ) ); ?> - <?php bloginfo( 'name' ); ?></title><?php } ?>
     <?php if ( is_author() ) { ?><title><?php wp_title( "" ); ?> - <?php bloginfo( 'name' ); ?></title><?php } ?>
     <?php if ( is_archive() ) { ?><title><?php single_cat_title(); ?> - <?php bloginfo( 'name' ); ?></title><?php } ?>

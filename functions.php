@@ -71,7 +71,7 @@ function daniot_unregister_default_widgets() {
     unregister_widget( 'WP_Widget_Archives' );
     unregister_widget( 'WP_Widget_Links' );
     unregister_widget( 'WP_Widget_Meta' );
-    unregister_widget( 'WP_Widget_Search' );
+    //unregister_widget( 'WP_Widget_Search' );
     unregister_widget( 'WP_Widget_Text' );
     unregister_widget( 'WP_Widget_Categories' );
     unregister_widget( 'WP_Widget_Recent_Posts' );
@@ -101,14 +101,14 @@ if ( function_exists( 'register_nav_menus' ) ) {
 /**
  * Register sidebar
  */
-if ( function_exists( 'register_sidebar' ) ) {
+/*if ( function_exists( 'register_sidebar' ) ) {
     register_sidebar( array(
         'name'          => 'sidebar',
         'id'            => 'sidebar-page',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
     ) );
-}
+}*/
 
 /**
  * Register theme languages files

@@ -218,7 +218,7 @@ font-size: 18px;
     font-style: normal;
 }
 
-.daniot-search,
+/*.daniot-search,*/
 .breadcrumb-arrow,
 .dropdown > a:before,
 .mobile-menu-button,
@@ -429,9 +429,9 @@ font-size: 18px;
     content: "\f0c9"
 }
 
-.daniot-search:before {
+/*.daniot-search:before {
     content: "\f002";
-}
+}*/
 
 .breadcrumb-arrow:before {
     content: "\e607";
@@ -532,7 +532,7 @@ font-size: 18px;
     content: "\e7fd";
     font-size: 18px;
 }
-
+/*
 .search-form {
     position: relative;
     float: right;
@@ -567,6 +567,7 @@ font-size: 18px;
 .search-submit:hover {
     color: #5895be
 }
+*/
 
 /**
 .wp-zan.zaned,
@@ -822,7 +823,7 @@ body.full-content .post-body ul li ul li
 .page #comments {
     padding-top: 30px;
 }
-
+/*
 #sidebar {
     float: right;
     padding-left: 40px
@@ -836,7 +837,7 @@ body.full-content .post-body ul li ul li
     position: fixed;
     top: 20px
 }
-
+*/
 .widget {
     margin-bottom: 20px;
     word-wrap: break-word;
@@ -1642,11 +1643,11 @@ body.full-content .post-body ul li ul li
         top: 0;
         background: #fff;*/
     }
-
+/*
     #sidebar, .global-nav, .search-form {
         display: none
     }
-
+*/
     #header .container {
         position: relative;
         height: auto;
@@ -1661,13 +1662,13 @@ body.full-content .post-body ul li ul li
     .logo {
         margin-left: 15px;
     }
-
+/*
     .mobile-menu-button,
     body.mobile-menu-open .global-custom-nav,
     body.mobile-menu-open .search-form{
         display: block;
     }
-
+*/
     body.mobile-menu-open #header{
         /*height: 100%;*/
         background: rgba(255,255,255,.5);
@@ -1709,7 +1710,7 @@ body.full-content .post-body ul li ul li
         padding: 5px 15px;
         border-top: 1px solid #eee;
     }
-
+/*
     .search-form,
     .search-input,
     .search-submit{
@@ -1740,7 +1741,7 @@ body.full-content .post-body ul li ul li
         left: 0;
         color: #aaa;
     }
-
+*/
     .mobile-menu-button {
         position: absolute;
         text-align: center;
@@ -1806,10 +1807,10 @@ body.blue .global-nav .gnli.current .gna,
 body.blue .global-nav .gnli.current .gna:hover,
 body.blue .top-menu ul li a:hover,
 body.blue .global-nav .gna:hover,
-body.blue .search-submit:hover {
+/*body.blue .search-submit:hover {
     color: #177ee6;
 }
-
+*/
 body.blue .page-numbers.current,
 body.blue .page-numbers:hover {
     border-bottom-color: #177ee6;
@@ -1893,10 +1894,10 @@ body.green .global-nav .gnli.current .gna,
 body.green .global-nav .gnli.current .gna:hover,
 body.green .top-menu ul li a:hover,
 body.green .global-nav .gna:hover,
-body.green .search-submit:hover {
+/*body.green .search-submit:hover {
     color: #37c936;
 }
-
+*/
 body.green .page-numbers.current,
 body.green .page-numbers:hover {
     border-bottom-color: #37c936;
@@ -1926,10 +1927,10 @@ body.red .global-nav .gnli.current .gna,
 body.red .global-nav .gnli.current .gna:hover,
 body.red .top-menu ul li a:hover,
 body.red .global-nav .gna:hover,
-body.red .search-submit:hover {
+/*body.red .search-submit:hover {
     color: #dd4b39;
 }
-
+*/
 body.red .page-numbers.current,
 body.red .page-numbers:hover {
     border-bottom-color: #dd4b39;
