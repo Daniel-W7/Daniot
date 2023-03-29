@@ -6,11 +6,11 @@
 * Alatelee github项目 https://github.com/AgateLee/Kunkka
 * 神韵 github项目 https://github.com/ShenYun1/Kunkka
 * Daniel github项目https://github.com/Daniel-W7/Kunkka/
-开发测试的的php环境：                             
+开发测试的环境：
+php版本及安装包：                             
   php7.4 php7.4-cli php7.4-common php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-readline  
 注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用     
-
-
+wordpress版本：6.1
 
 
 # 版本说明/更新日志
@@ -21,7 +21,8 @@
 * 重新定义版本和说明文件，简化使用和理解
 * 通过调整php_mbstring的配置及说明，使主题可正常显示
 * 修复“WP_Widget 类在 daniot_widget_populars 中的调用构造方法自 4.3.0 版本起以弃用！请使用 __construct() 代替”报错，以及部分语法错误
-* 发现wp-zan插件会导致报错，之后再处理,小工具移除.recentcomments样式,移除CSS/JS版本号两个选项会导致报错
+* 发现启用wp-zan插件会导致报错，之后再处理,小工具移除.recentcomments样式,移除CSS/JS版本号两个选项会导致报错，暂时关闭
+* 升级到jquery3.6.4，适配wordpress6.1，php7.4
 
 **v1.23_daniel**
 
