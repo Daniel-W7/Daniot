@@ -568,10 +568,12 @@ font-size: 18px;
     color: #5895be
 }
 
+/**
 .wp-zan.zaned,
 .wp-zan:hover {
     color: #5895be !important;
 }
+*/
 
 #content .container {
     padding-top: 40px;
@@ -1813,10 +1815,12 @@ body.blue .page-numbers:hover {
     border-bottom-color: #177ee6;
 }
 
+/**
 body.blue .wp-zan:hover,
 body.blue .wp-zan.zaned {
     color: #177ee6 !important;
 }
+*/
 
 body.blue .tab-categories li a:hover,
 body.blue .tab-tags a:hover {
@@ -1898,10 +1902,12 @@ body.green .page-numbers:hover {
     border-bottom-color: #37c936;
 }
 
+/**
 body.green .wp-zan:hover,
 body.green .wp-zan.zaned {
     color: #37c936 !important;
 }
+*/
 
 body.green .tab-categories li a:hover,
 body.green .tab-tags a:hover {
@@ -1929,10 +1935,12 @@ body.red .page-numbers:hover {
     border-bottom-color: #dd4b39;
 }
 
+/**
 body.red .wp-zan:hover,
 body.red .wp-zan.zaned {
     color: #dd4b39 !important;
 }
+*/
 
 body.red .tab-categories li a:hover,
 body.red .tab-tags a:hover {

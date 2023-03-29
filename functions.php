@@ -215,8 +215,9 @@ add_action( 'pre_ping', 'no_self_ping' );
 //复制出提示
 /*function zm_copyright_tips() {
 	echo '<script>document.body.oncopy=function(){alert("复制成功！转载请务必保留原文链接，申明来源，谢谢合作！");}</script>';
-}*/
-add_action( 'wp_footer', 'zm_copyright_tips', 100 );
+
+add_action( 'wp_footer', 'zm_copyright_tips', 100 );*/
+
 //评论添加验证码
 function spam_protection_math(){
 	$num1=rand(0,9);

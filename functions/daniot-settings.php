@@ -197,7 +197,7 @@ class daniot_settings {
                         </p>
 						<p>首页左上角logo替换位置在\public\images\logo.png 尺寸为205*60 缓冲图标为\public\images\placeholder.png 建议尺寸144*144
                         <p>
-                            主题推荐安装 WP-PostViews、WP-Zan 插件：WP-PostViews 是文章浏览量统计插件，热门文章小工具采用了此插件；WP-Zan 是文章点赞插件。
+                            主题推荐安装 WP-PostViews：WP-PostViews 是文章浏览量统计插件，热门文章小工具采用了此插件。
                         </p>
                     </div>
                 </div>
@@ -297,11 +297,13 @@ class daniot_settings {
 
     public function plugins() {
         $plugins = array(
+            /**
             array(
                 'name'     => 'WP-Zan ',
                 'slug'     => 'wp-zan',
                 'required' => false,
             ),
+            */
             array(
                 'name'     => 'WP-PostViews ',
                 'slug'     => 'wp-postviews',
