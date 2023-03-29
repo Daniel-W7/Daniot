@@ -7,7 +7,8 @@
 *开发测试的环境：
 php版本及安装包：                             
   php7.4 php7.4-cli php7.4-common php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-readline  
-注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用     
+注：php7.4-mbstring需要修改php.ini，添加extension=php_mbstring.dll，重启apache才能正常使用 
+
 wordpress版本：6.1
 
 
