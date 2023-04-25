@@ -36,7 +36,6 @@
 		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34162302000199" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="https://www.danielw7.com/wp-content/uploads/2021/12/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">皖公网安备 34162302000199号</p></a>
 		 	</div>
 		 
-		 
          <p>&nbsp</p>
     </div>
 </div>

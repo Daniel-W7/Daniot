@@ -90,6 +90,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 /**
  * Register wordpress menu
+ * 注册一个wordpress导航菜单，从而在wordpress当中可以新建菜单，并可以根据菜单名称进行css配置
  */
 if ( function_exists( 'register_nav_menus' ) ) {
     register_nav_menus( array(

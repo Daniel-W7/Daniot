@@ -60,3 +60,17 @@ jQuery(document).ready(function ($) {
 
 
 });
+/*
+	sub-menu
+*/
+jQuery(document).ready( function () { 
+	jQuery( 'global-nav li' ).hover( 
+		function () { 
+			jQuery( this ).find( 'ul:first' ).css( { "visibility":"visible", "display":"block" } )
+		},
+		function () {
+			jQuery( this ).find('ul:first').css( { "visibility":"hidden"} )
+		}
+	);
+} );
+
