@@ -95,5 +95,8 @@ echo '</h2>';
   </div> 
 </div>
 <!-- #header -->
+<!--
+关闭content块配置，简化布局
 <div id="content">
     <div class="container clearfix">
+            -->
