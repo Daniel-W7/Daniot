@@ -63,6 +63,7 @@ jQuery(document).ready(function ($) {
 /*
 	sub-menu
 */
+/* 开始下拉菜单配置，li前面要添加菜单所属的类*/
 jQuery(document).ready( function () { 
 	jQuery( 'global-nav li' ).hover( 
 		function () { 
