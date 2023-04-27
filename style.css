@@ -17,6 +17,102 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 */
+/*定义头部整体布局*/
+#header {
+    position: relative;
+    z-index: 90;
+    padding: 10px 0;
+    border-bottom: 1px solid #ededed;
+    box-shadow: 0 1px 0 0 hsla(0, 0%, 62%, .2) inset;
+    -ms-box-shadow: 0 1px 0 0 hsla(0, 0%, 62%, .2) inset
+}
+/*定义标题栏布局*/
+#header .header {
+    height: 5px;
+    line-height: 5px
+}
+/*定义logo布局*/
+.logo {
+    float: left;
+    margin-right: 40px;
+    width: 102px;
+    height: 30px
+}
+/*定义导航菜单布局*/
+.global-nav{
+    height: 5px;
+    display: block
+}
+/*让global-nav类下的li元素菜单横向显示，并配置字体位置*/
+.global-nav li {
+    float:left;
+    line-height:5px
+}
+/*让submenu不显示，调用js实现鼠标浮动过来显示*/
+.global-nav .sub-menu{
+    _display:none
+}
+/*让.global-nav .sub-menu li竖向显示*/
+.global-nav .sub-menu li {
+    float:none;
+}
+.top-menu ul li {
+    margin-right: 15px;
+}
+
+.global-nav .gna,
+.top-menu ul li a {
+    display: block;
+    height: 30px;
+    outline: 0;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px
+}
+
+.global-nav .gna:hover,
+.top-menu ul li a:hover {
+    color: #5895be
+}
+
+.global-custom-nav ul li {
+    display: inline-block
+}
+
+.global-custom-nav ul li.current-menu-item a,
+.global-nav .gnli.current .gna, .global-nav .gnli.current .gna:hover {
+    color: #5895be;
+}
+
+.global-nav ul li a span {
+    min-width: 14px;
+    margin-right: 5px
+}
+.global-nav global-custom-nav left .top-menu .menu .sub-menu{
+    display:none;
+}
+
+.top-menu ul li.archive a,
+.top-menu ul li.about a {
+    padding-left: 18px;
+    position: relative;
+}
+
+.top-menu ul li.archive a:before,
+.top-menu ul li.about a:before {
+    position: absolute;
+    left: 0;
+    line-height: 30px;
+}
+
+.top-menu ul li.archive a:before {
+    content: "\e904";
+}
+
+.top-menu ul li.about a:before {
+    content: "\e7fd";
+    font-size: 18px;
+}
 
 *, :after, :before {
     -webkit-box-sizing: border-box;
@@ -458,95 +554,8 @@ font-size: 18px;
     padding-right: 5px
 }
 
-#header {
-    position: relative;
-    z-index: 90;
-    padding: 20px 0;
-    border-bottom: 1px solid #ededed;
-    box-shadow: 0 1px 0 0 hsla(0, 0%, 62%, .2) inset;
-    -ms-box-shadow: 0 1px 0 0 hsla(0, 0%, 62%, .2) inset
-}
 
-#header .container {
-    height: 30px;
-    line-height: 30px
-}
 
-.logo {
-    float: left;
-    margin-right: 40px;
-    width: 102px;
-    height: 30px
-}
-
-.global-nav, .global-nav .gnul, .logo {
-    display: block
-}
-
-.global-nav .gnli,
-.top-menu ul li {
-    display: inline-block;
-    margin-right: 25px;
-    zoom: 1
-}
-
-.top-menu ul li {
-    margin-right: 15px;
-}
-
-.global-nav .gna,
-.top-menu ul li a {
-    display: block;
-    height: 30px;
-    outline: 0;
-    color: #666;
-    text-decoration: none;
-    font-size: 14px
-}
-
-.global-nav .gna:hover,
-.top-menu ul li a:hover {
-    color: #5895be
-}
-
-.global-custom-nav ul li {
-    display: inline-block
-}
-
-.global-custom-nav ul li.current-menu-item a,
-.global-nav .gnli.current .gna, .global-nav .gnli.current .gna:hover {
-    color: #5895be;
-}
-
-.global-nav ul li a span {
-    min-width: 14px;
-    margin-right: 5px
-}
-.global-nav global-custom-nav left .top-menu .menu .sub-menu{
-    display:none;
-}
-
-.top-menu ul li.archive a,
-.top-menu ul li.about a {
-    padding-left: 18px;
-    position: relative;
-}
-
-.top-menu ul li.archive a:before,
-.top-menu ul li.about a:before {
-    position: absolute;
-    left: 0;
-    line-height: 30px;
-}
-
-.top-menu ul li.archive a:before {
-    content: "\e904";
-}
-
-.top-menu ul li.about a:before {
-    content: "\e7fd";
-    font-size: 18px;
-}
 /*
 .search-form {
     position: relative;
@@ -1199,18 +1208,18 @@ body.full-content .post-body ul li ul li
 }
 
 #footer {
-    border-top: 1px solid #ececec
+    border-top: 1px solid #ececec;
 }
 
 #footer, #footer a {
     color: #999;
 }
 
-#footer .container {
+.footer {
     padding: 15px 0;
-    height: 30px;
+    height: 20px;
     text-align: center;
-    line-height: 20px
+    line-height: 30px
 }
 
 .left {
