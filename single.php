@@ -39,7 +39,6 @@
                 </div>
             </div>
         <?php endwhile; endif; ?>
-        <?php comments_template(); ?>
     </div>
     <!-- #primary -->
 <?php get_footer(); ?>

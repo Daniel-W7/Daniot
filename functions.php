@@ -1,276 +1,89 @@
-<?php
-/**
- * @name Functions
- * @description Wordpress theme default functions file
- * @version     见functions.php中daniot-version定义的版本号
- * @author      Daniel
- * @url https://www.danios.com
- * @package     Daniot
- **/
-
-/**
- * Define constants
- */
-//关闭一般报错通知
-//ini_set("error_reporting","E_ALL & ~E_NOTICE");
-//主题名称
-define( 'daniot_NAME', 'Daniot' );
-//主题版本
-define( 'daniot_VERSION', '1.0.0' );
-define( 'daniot_PATH', dirname( __FILE__ ) );
-define( "daniot_THEME_URL", get_bloginfo( 'template_directory' ) );
-//WordPress SSL at 2016/12/29 update
-
-/**
- * Import core function files
- */
-get_template_part( 'functions/daniot-basic' );
-get_template_part( 'functions/daniot-function' );
-get_template_part( 'functions/daniot-widget' );
-get_template_part( 'functions/daniot-main' );
-
-/**
- * Add rss feed
- */
-add_theme_support( 'automatic-feed-links' );
-
-/**
- * Enable link manager
- */
-add_filter( 'pre_option_link_manager_enabled', '__return_true' );
-
-/**
- * Add post thumbnail
- */
-add_theme_support( 'post-thumbnails' );
-
-/**
- * Disable symbol automatically converted to full ban
- */
-remove_filter( 'the_content', 'wptexturize' );
-
-/**
- * Remove invalid information display at head tag
- */
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'wp_generator' );
-remove_action( 'wp_head', 'start_post_rel_link' );
-remove_action( 'wp_head', 'index_rel_link' );
-remove_action( 'wp_head', 'adjacent_posts_rel_link' );
-
-/**
- * Remove default wordpress widgets
- */
-if( !daniot_settings('register_widget') ){
-    add_action( 'widgets_init', 'daniot_unregister_default_widgets', 1 );
-}
-function daniot_unregister_default_widgets() {
-    unregister_widget( 'WP_Widget_Pages' );
-    unregister_widget( 'WP_Widget_Calendar' );
-    unregister_widget( 'WP_Widget_Archives' );
-    unregister_widget( 'WP_Widget_Links' );
-    unregister_widget( 'WP_Widget_Meta' );
-    //unregister_widget( 'WP_Widget_Search' );
-    unregister_widget( 'WP_Widget_Text' );
-    unregister_widget( 'WP_Widget_Categories' );
-    unregister_widget( 'WP_Widget_Recent_Posts' );
-    unregister_widget( 'WP_Widget_Recent_Comments' );
-    unregister_widget( 'WP_Widget_RSS' );
-    unregister_widget( 'WP_Nav_Menu' );
-    unregister_widget( 'WP_Widget_Tag_Cloud' );
-}
-
-/**
- * Post thumbnail custom sizes
- */
-if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'index-thumbnail', 250, 250, true );
-}
-
-/**
- * Register wordpress menu
- * 注册一个wordpress导航菜单，从而在wordpress当中可以新建菜单，并可以根据菜单名称进行css配置
- */
-if ( function_exists( 'register_nav_menus' ) ) {
-    register_nav_menus( array(
-        'top-menu'    => __( 'Top menu', daniot_NAME ),
-        'global-menu' => __( 'Dropdown menu', daniot_NAME )
-    ) );
-}
-
-/**
- * Register sidebar
- */
-/*if ( function_exists( 'register_sidebar' ) ) {
-    register_sidebar( array(
-        'name'          => 'sidebar',
-        'id'            => 'sidebar-page',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
-    ) );
-}*/
-
-/**
- * Register theme languages files
- */
-load_theme_textdomain( daniot_NAME, daniot_path( 'languages' ) );
-
-//替换Gavatar头像地址
-function get_ssl_avatar($avatar) {
-    if (preg_match_all(
-        '/(src|srcset)=["\']https?.*?\/avatar\/([^?]*)\?s=([\d]+)&([^"\']*)?["\']/i',
-        $avatar,
-        $matches
-    ) > 0) {
-        $url = 'https://secure.gravatar.com';
-        $size = $matches[3][0];
-        $vargs = array_pad(array(), count($matches[0]), array());
-        for ($i = 1; $i < count($matches); $i++) {
-            for ($j = 0; $j < count($matches[$i]); $j++) {
-                $tmp = strtolower($matches[$i][$j]);
-                $vargs[$j][] = $tmp;
-                if ($tmp == 'src') {
-                    $size = $matches[3][$j];
-                }
-            }
-        }
-        $buffers = array();
-        foreach ($vargs as $varg) {
-            $buffers[] = vsprintf(
-            '%s="%s/avatar/%s?s=%s&%s"',
-            array($varg[0], $url, $varg[1], $varg[2], $varg[3])
-           );
-        }
-        return sprintf(
-                '<img alt="avatar" %s class="avatar avatar-%s" height="%s" width="%s" />',
-                implode(' ', $buffers), $size, $size, $size
-            );
-    } else {
-        return false;
-    }
-}
-	add_filter('get_avatar', 'get_ssl_avatar');
-	
-//禁止站内pingback
-function no_self_ping( &$links ) {
-    $home = get_option( 'home' );
-    foreach ( $links as $l => $link )
-        if ( 0 === strpos( $link, $home ) ) unset($links[$l]);
-}
-add_action( 'pre_ping', 'no_self_ping' );
-//移除预获取DNS
-	function remove_dns_prefetch( $hints, $relation_type ) 
-	{
-		if ( 'dns-prefetch' === $relation_type ) 
-		{ return array_diff( wp_dependencies_unique_hosts(), $hints ); } 
-		
-		return $hints; 
-	}
-	add_filter( 'wp_resource_hints', 'remove_dns_prefetch', 10, 2 );	
-	remove_action('admin_print_scripts','print_emoji_detection_script');
-	remove_action('admin_print_styles','print_emoji_styles');
-	remove_action('wp_head','print_emoji_detection_script',	7);
-	remove_action('wp_print_styles','print_emoji_styles');
-	remove_action('embed_head','print_emoji_detection_script');
-	remove_filter('the_content_feed','wp_staticize_emoji');
-	remove_filter('comment_text_rss','wp_staticize_emoji');
-	remove_filter('wp_mail','wp_staticize_emoji_for_email');
-	remove_action( 'wp_head', 'feed_links', 2 ); //移除feed
-	remove_action( 'wp_head', 'feed_links_extra', 3 ); //移除feed
-	remove_action( 'wp_head', 'wp_generator' ); //移除WordPress版本
-	add_filter( 'emoji_svg_url', '__return_false' ); //DNS EMOJI
-	remove_action('rest_api_init', 'wp_oembed_register_route'); //EMbed
-	remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
-	remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10 );
-	remove_filter('oembed_response_data',   'get_oembed_response_data_rich',  10, 4);
-	remove_action('wp_head', 'wp_oembed_add_discovery_links');
-	remove_action('wp_head', 'wp_oembed_add_host_js');//EMbed结束
-	add_filter('xmlrpc_enabled', '__return_false');
-	//add_filter('use_block_editor_for_post', '__return_false');//禁用古腾堡
-	//remove_action( 'wp_enqueue_scripts', 'wp_common_block_scripts_and_styles' );//禁用古腾堡前端
-	add_action('admin_menu', function (){
-	global $menu, $submenu;
-	// 移除设置菜单下的隐私子菜单。
-	unset($submenu['options-general.php'][45]);
-	// 移除工具菜单下的相关页面
-	remove_action( 'admin_menu', '_wp_privacy_hook_requests_page' );
-	remove_filter( 'wp_privacy_personal_data_erasure_page', 'wp_privacy_process_personal_data_erasure_page', 10, 5 );
-	remove_filter( 'wp_privacy_personal_data_export_page', 'wp_privacy_process_personal_data_export_page', 10, 7 );
-	remove_filter( 'wp_privacy_personal_data_export_file', 'wp_privacy_generate_personal_data_export_file', 10 );
-	remove_filter( 'wp_privacy_personal_data_erased', '_wp_privacy_send_erasure_fulfillment_notification', 10 );
- 
-	// Privacy policy text changes check.
-	remove_action( 'admin_init', array( 'WP_Privacy_Policy_Content', 'text_change_check' ), 100 );
- 
-	// Show a "postbox" with the text suggestions for a privacy policy.
-	remove_action( 'edit_form_after_title', array( 'WP_Privacy_Policy_Content', 'notice' ) );
- 
-	// Add the suggested policy text from WordPress.
-	remove_action( 'admin_init', array( 'WP_Privacy_Policy_Content', 'add_suggested_content' ), 1 );
- 
-	// Update the cached policy info when the policy page is updated.
-	remove_action( 'post_updated', array( 'WP_Privacy_Policy_Content', '_policy_page_updated' ) );
-},9);
-
-//复制出提示
-/*function zm_copyright_tips() {
-	echo '<script>document.body.oncopy=function(){alert("复制成功！转载请务必保留原文链接，申明来源，谢谢合作！");}</script>';
-
-add_action( 'wp_footer', 'zm_copyright_tips', 100 );*/
-
-//评论添加验证码
-function spam_protection_math(){
-	$num1=rand(0,9);
-	$num2=rand(0,9);
-	echo "<label for=\"math\">人机验证:<i>$num1 + $num2 = ?</i>  </label>\n ";
-	echo "<input type=\"text\" name=\"sum\" class=\"text\" value=\"\" size=\"25\" tabindex=\"4\">\n";
-	echo "<input type=\"hidden\" name=\"num1\" value=\"$num1\">\n";
-	echo "<input type=\"hidden\" name=\"num2\" value=\"$num2\">";
-}
-function spam_protection_pre($commentdata){
-	$sum=$_POST['sum'];
-	switch($sum){
-		case $_POST['num1']+$_POST['num2']:
-		break;
-		case null:
-		wp_die('对不起: 请输入验证码。<a href="javascript:history.back(-1)">返回上一页</a>','评论失败');
-		break;
-		default:
-		wp_die('对不起: 验证码错误，请<a href="javascript:history.back(-1)">返回</a>重试。','评论失败');
-	}
-	return $commentdata;
-}
-if(empty($comment_data['comment_type'])){
-	add_filter('preprocess_comment','spam_protection_pre');
-}
-/**
-* 禁用emoji表情
+<?php 
+/*
+register_nav_menu( $location, $description )
+函数功能：开启导航菜单功能
+@参数 string $location, 导航菜单的位置
+@参数 string $description, 导航菜单的描述
+开启多个位置的导航菜单，只需要重复调用此函数即可
 */
-function disable_emojis() {
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-}
-add_action( 'init', 'disable_emojis' );
+register_nav_menu( 'daniot-topmenu', '网站的顶部导航' ); 
+register_nav_menu( 'daniot-leftmenu', '网站的左侧导航' );
+register_nav_menu( 'daniot-rightmenu', '网站的右侧导航' );    //注册一个菜单
+/*添加feed自动链接功能*/
+add_theme_support('automatic-feed-links');
 /**
-* Filter function used to remove the tinymce emoji plugin.
+* 想要wp_title()函数实现，访问首页显示“站点标题-站点副标题”
+* 如果存在翻页且正方的不是第1页，标题格式“标题-第2页”
+* 当使用短横线-作为分隔符时，会将短横线转成字符实体&#8211;
+* 而我们不需要字符实体，因此需要替换字符实体
+* wp_title()函数显示的内容，在分隔符前后会有空格，也要去掉
 */
-function disable_emojis_tinymce( $plugins ) {
-if ( is_array( $plugins ) ) {
-return array_diff( $plugins, array( 'wpemoji' ) );
-} else {
-return array();
-}}
-/**配置登录页面加密
-add_action('login_enqueue_scripts','login_protection');
-		function login_protection() {
-		if($_GET['daniel'] != 'danielw')    // loginhere为验证字段名,self-string为验证字段值
-		header('Location: www.danielw7.com');
+add_filter('wp_title', 'lingfeng_wp_title', 10, 2);
+function lingfeng_wp_title($title, $sep) {
+	global $paged, $page;
+
+	//如果是feed页，返回默认标题内容
+	if ( is_feed() ) { 
+		return $title;
+	}
+
+	// 标题中追加站点标题
+	$title .= get_bloginfo( 'name' );
+
+	// 网站首页追加站点副标题
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	// 标题中显示第几页
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( '第%s页', max( $paged, $page ) );
+
+	//去除空格，-的字符实体
+	$search = array('&#8211;', ' ');
+	$replace = array('-', '');
+	$title = str_replace($search, $replace, $title);
+
+	return $title;	
 }
-**/
+//WordPress获取站点总浏览量
+function all_view() /*注意这个函数名，调用的就是用它了*/
+{
+global $wpdb;
+$count=0;
+$views= $wpdb->get_results("SELECT * FROM $wpdb->postmeta WHERE meta_key='views'");
+foreach($views as $key=>$value)
+{
+$meta_value=$value->meta_value;
+if($meta_value!=' ')
+{
+$count+=(int)$meta_value;}
+}
+return $count;}
+//WordPress获取站点当前在线人数
+function show_online_count() {
+	//首先你要有读写文件的权限，首次访问肯不显示，正常情况刷新即可  
+	$online_log = "/var/www/html/wp-content/themes/test/static/maplers.dat"; //保存人数的文件到根目录,  
+	$timeout = 120;//30秒内没动作者,认为掉线  
+	$entries = file($online_log);
+	$temp = array();
+	for ($i=0;$i<count($entries);$i++){
+	$entry = explode(",",trim($entries[$i]));
+	if(($entry[0] != getenv('REMOTE_ADDR')) && ($entry[1] > time())) {
+	array_push($temp,$entry[0].",".$entry[1]."\n"); //取出其他浏览者的信息,并去掉超时者,保存进$temp  
+	}}
+	array_push($temp,getenv('REMOTE_ADDR').",".(time() + ($timeout))."\n"); //更新浏览者的时间  
+	$maplers = count($temp); //计算在线人数  
+	$entries = implode("",$temp);
+	//写入文件  
+	$fp = fopen($online_log,"w");
+	flock($fp,LOCK_EX); //flock() 不能在NFS以及其他的一些网络文件系统中正常工作  
+	fputs($fp,$entries);
+	flock($fp,LOCK_UN);
+	fclose($fp);
+	return $maplers;
+}
+
+
+
+?>
