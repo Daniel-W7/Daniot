@@ -19,7 +19,7 @@
                 $fp = fopen($counterFile, "r");
                 $num = fgets($fp, 10);
                 fclose($fp);
-                $fp = fopen($counterBackupFile, "r");
+                $fp = fopen($counterBackupFile, "r");·
                 $numBak = fgets($fp, 10);
                 fclose($fp);
                 if ($num < 10) {
