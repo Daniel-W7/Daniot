@@ -8,7 +8,7 @@
       <td class="menu" style="width: 15%;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
       <td class="menu">
         <div class="top_navi">
-          主菜单
+          single.php
           <?php
             /*
             wp_nav_menu( $args )
@@ -41,7 +41,7 @@
 <!--左侧菜单栏-->
 <div id="left">
   <div class="os">
-    左侧菜单
+    single.php
   </div><!--os-->
   <div class="navi">
     <?php
@@ -237,6 +237,14 @@ Aug 26, 2021</td>
 <td>
 <p style="height: 20px; overflow: hidden;">
 <a href="javascript:;">Opera's New Redesigned Web Browser is Also Available on Linux - It's FOSS News</a>
+</p>
+</td>
+</tr>
+<tr>
+<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
+<td>
+<p style="height: 20px; overflow: hidden;">
+<a href="javascript:;">Linux Operating System Market Growth, Revenue, Emerging Trends, Scope, Business Opportunities and Forecast 203 - openPR</a>
 </p>
 </td>
 </tr>

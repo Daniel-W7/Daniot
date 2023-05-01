@@ -1,5 +1,4 @@
 <?php get_header() ?>
-
 <body>
 <!--主菜单栏-->
 <div id="top-menu">
@@ -8,7 +7,6 @@
       <td class="menu" style="width: 15%;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
       <td class="menu">
         <div class="top_navi">
-          主菜单
           <?php
             /*
             wp_nav_menu( $args )
@@ -16,17 +14,24 @@
             特别说明：
             调用导航菜单时，可以直接复制以下代码。然后根据需要删除成员参数
             */
-            /*
             wp_nav_menu( array(
-              'theme_location'				=> 'daniot-topmenu',	//[保留]
+              'theme_location'				=> 'daniot-topmenu',									//[保留]
+              'menu'								=> '',									//[可删]
               'container'							=> false,							//[可删]
-              'before'								=> '',								//[可删]
-              'after'									=> '',								//[可删]		
-              'link_before'						=> '',								//[可删]
-              'link_after'						=> '',							  //[可删]
-              'depth'								  => 1,								//[可删]
+              'container_class'				=> '',									//[可删]
+              'container_id'					=> '',									//[可删]
+              'menu_class'					=> 'menu',						//[可删]
+              'menu_id'							=> 'menu',									//[可删]
+              'echo'								=> true,							//[可删]
+              'fallback_cb'						=> 'wp_page_menu',		//[可删]
+              'before'								=> '',									//[可删]
+              'after'									=> '',									//[可删]		
+              'link_before'						=> '',									//[可删]
+              'link_after'							=> '',									//[可删]
+              'items_wrap'						=> '<ul id="%1$s" class="%2$s">%3$s</ul>',	//[可删]
+              'depth'								=> 3,								//[可删]
+              'walker'								=> ''									//[可删]			
             ) );
-            */
           ?>
         </div>
       </td>
@@ -41,7 +46,7 @@
 <!--左侧菜单栏-->
 <div id="left">
   <div class="os">
-    左侧菜单
+    index.php
   </div><!--os-->
   <div class="navi">
     <?php
@@ -52,7 +57,7 @@
       调用导航菜单时，可以直接复制以下代码。然后根据需要删除成员参数
       */
       wp_nav_menu( array(
-        'theme_location'				=> 'daniot-leftmenu',	//[保留]
+        'theme_location'				=> 'daniot-leftmenu',	//[保留]调用左侧导航菜单
         'container'							=> false,							//[可删]
         'before'								=> '',								//[可删]
         'after'									=> '',								//[可删]		
@@ -81,172 +86,32 @@
   <!--内容标题和RSS订阅配置-->
   <table style="width: 96%; line-height: 1.5; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto;">
     <tr>
-      <td style="width: 100%; height: 28px; color: #ff3399; padding-left: 50px; background: url(static/image/icon.gif) #ffffff no-repeat 0 0;">
+      <td style="width: 100%; height: 28px; color: #ff3399; padding-left: 50px; background: url(<?php echo get_template_directory_uri(); ?>/static/image/icon.gif) #ffffff no-repeat 0 0;">
         <div class="subject"> 
             <?php bloginfo('title'); ?>&nbsp;
             <a href="<?php bloginfo('rss2_url'); ?>" 
             style="color: #ff4500; text-decoration: none; font-weight: normal; font-size: 12px;">[RSS]</a>&nbsp;
-            <a href="javascript:;" 
+            <a href="" 
             style="color: #ff4500; text-decoration: none; font-weight: normal; font-size: 12px;">[历史文章]</a></div>
       </td>
     </tr>
   </table><!--内容标题和RSS订阅配置-->
- <!--主要内容-->
+<!--主要内容-->
 <table class="base">
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">
-Apr 21, 2023</td>
-<td style="width: 10px; text-align: right; vertical-align: top;">[</td>
-<td style="width: 140px; text-align: center; vertical-align: top;">Ubuntu 23.04</td>
-<td style="width: 10px; text-align: left; vertical-align: top;">]</td>
-<td style="padding-left: 5px;">
-<a href="note-Ubuntu_23.04_download.html">Ubuntu 23.04 Configuration</a>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">
-Apr 20, 2023</td>
-<td style="width: 10px; text-align: right; vertical-align: top;">[</td>
-<td style="width: 140px; text-align: center; vertical-align: top;">Fedora 38</td>
-<td style="width: 10px; text-align: left; vertical-align: top;">]</td>
-<td style="padding-left: 5px;">
-<a href="note-Fedora_38_download.html">Fedora 38 Configuration</a>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">
-Mar 23, 2023</td>
-<td style="width: 10px; text-align: right; vertical-align: top;">[</td>
-<td style="width: 140px; text-align: center; vertical-align: top;">Ubuntu 22.04</td>
-<td style="width: 10px; text-align: left; vertical-align: top;">]</td>
-<td style="padding-left: 5px;">
-<a href="javascript:;">Cloud infrastructure by OpenStack Antelope</a>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">
-Dec 16, 2021</td>
-<td style="width: 10px; text-align: right; vertical-align: top;">[</td>
-<td style="width: 140px; text-align: center; vertical-align: top;">CentOS Stream 9</td>
-<td style="width: 10px; text-align: left; vertical-align: top;">]</td>
-<td style="padding-left: 5px;">
-<a href="note-CentOS_Stream_9_download.html">CentOS Stream 9 Configuration</a>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">
-Aug 26, 2021</td>
-<td style="width: 10px; text-align: right; vertical-align: top;">[</td>
-<td style="width: 140px; text-align: center; vertical-align: top;">Windows 2022</td>
-<td style="width: 10px; text-align: left; vertical-align: top;">]</td>
-<td style="padding-left: 5px;">
-<a href="note-Windows_Server_2022_download.html">Windows Server 2022 Configuration</a>
-</td>
-</tr>
-</table>
-<table style="width: 96%; line-height: 1.5; margin-top: 5px; margin-bottom: 10px; margin-left: auto; margin-right: auto;">
-<tr>
-<td style="width: 100%; height: 28px; color: #ff3399; padding-left: 50px; background: url(static/image/icon.gif) #ffffff no-repeat 0 0;">
-<div class="subject">News</div>
-</td>
-</tr>
-</table>
-<table class="base" style="margin-bottom: 12px;">
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Windows 11 WSL2 Performance vs. Ubuntu Linux With The AMD Ryzen 7 7800X3D - Phoronix</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Troubleshooting the "Temporary Failure in Name Resolution" Error ... - Linux Journal</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Linux Shift: Chinese APT Alloy Taurus Is Back With Retooling - Dark Reading</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Linux 6.4 Brings Improved MSI Laptop Support, Apple GMUX ... - Phoronix</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">How to Listen to Podcasts in Your Linux Terminal With Castero - MUO - MakeUseOf</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">How to Exit Vim in Linux (Three Ways) - Beebom</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 27, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Chinese Hackers Spotted Using Linux Variant of PingPull in Targeted Cyberattacks - The Hacker News</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Unix Vs Linux: What's the Difference? - Dignited</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Tar Command in Linux: Syntax, Options, and Examples - Beebom</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Steam Deck gets a Preview update with STAR WARS Jedi: Survivor ... - GamingOnLinux</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Opera's New Redesigned Web Browser is Also Available on Linux - It's FOSS News</a>
-</p>
-</td>
-</tr>
-<tr>
-<td style="width: 140px; text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;">Apr 26, 2023</td>
-<td>
-<p style="height: 20px; overflow: hidden;">
-<a href="javascript:;">Linux Operating System Market Growth, Revenue, Emerging Trends, Scope, Business Opportunities and Forecast 203 - openPR</a>
-</p>
-</td>
-</tr>
-</table>
+  <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+    <div class="block">
+      <tr>
+        <td style="text-align: right; padding-right: 10px; letter-spacing: 1px; vertical-align: top;"><?php the_time('Y年m月d日 H:i:s'); ?></td>
+        <td style="width: 10px; text-align: right; vertical-align: top;">[</td>
+        <td style="width: 200px; text-align: center; vertical-align: top;"><?php the_category(','); ?></td>
+        <td style="width: 10px; text-align: left; vertical-align: top;">]</td>
+        <td style="padding-left: 5px;">
+          <a href="./note?os=Ubuntu_23.04&amp;p=download"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></a>
+        </td>
+      </tr>
+    </div><!-- block -->			
+  <?php endwhile; ?>
+  <?php daniot_pagenavi(); ?>
+  <?php endif; ?>
+</table><!--base-->
 <?php get_footer() ?>

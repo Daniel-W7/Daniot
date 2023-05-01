@@ -8,7 +8,7 @@
       </script>
     </div>
   </div>
-</div>
+</div><!-- contents -->
 <div id="right">
   <span style="width: 100%;">
   <script async="" src="static/js/adsbygoogle-ca-pub-6423793798099903.js" crossorigin="anonymous"></script>
@@ -19,16 +19,18 @@
   </script>
   </span>
 </div> <!-- right -->
-<!-- 开启管理员登录头部菜单栏 -->
-<?php wp_footer(); ?>
+
 <!--版权及备案信息-->
-<div id="footer">Copyright &copy; 2018-<?php echo date('Y'); ?> <a href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a> All Rights Reserved.
+<div id="footer" class=footer>Copyright &copy; 2018-<?php echo date('Y'); ?> <a href="<?php echo home_url() ?>"><?php echo get_bloginfo('name') ?></a> All Rights Reserved.
   Powered by <a href="https://wordpress.org/" target="_blank">WordPress.</a>
   <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34162302000199">
     <img src="https://www.danielw7.com/wp-content/uploads/2021/12/备案图标.png" style="float:left;"/>皖公网安备 34162302000199号</p>
   </a>
   <script type="text/javascript" src="static/js/count.js"></script>
   <img src="https://www.server-world.info/bin/count/count.cgi?1" width="1" height="1" alt="">
+</div>
+<div class=footer>
+  <?php wp_footer(); ?>
 </div>
 </body>
 </html>
