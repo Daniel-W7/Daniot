@@ -1,59 +1,38 @@
-<div id="sidebar">
-    <?php if ( ! function_exists( 'dynamic_sidebar' ) || ! dynamic_sidebar( 'sidebar' ) ) : ?>
-        <p><?php _e( 'Please set up widgets at dashboard!', daniot_NAME ); ?></p>
-    <?php endif; ?>
-	<!-- 博客统计 -->
-<div class="widget">
-    <h1 class="widget-title">站点统计</h1>
-    <ul>
-        <li>文章总数：<?php echo wp_count_posts()->publish;?> 篇</li>
-        <li>页面总数：<?php echo wp_count_posts('page')->publish;?> 个</li>
-        <li>评论总数：<?php echo wp_count_comments()->total_comments?> 条</li>
-        <li>分类总数：<?php echo wp_count_terms('category')?> 个</li>
-        <li>标签总数：<?php echo wp_count_terms('post_tag')?> 个</li>
-        <li>运行天数：<?php echo floor((time()-strtotime("2020-10-04"))/86400);?> 天</li>
-        <li>访问总数：<?php
-            $counterFile = "counter.txt";
-            $counterBackupFile = "counter_bak.txt";
-            function displayCounter($counterFile, $counterBackupFile) {
-                $fp = fopen($counterFile, "r");
-                $num = fgets($fp, 10);
-                fclose($fp);
-                $fp = fopen($counterBackupFile, "r");·
-                $numBak = fgets($fp, 10);
-                fclose($fp);
-                if ($num < 10) {
-                    if ($numBak > 10) {
-                        $num = $numBak;
-                    }
-                }
-                if (!is_user_logged_in()) {
-                    $num += 1;
-                    $fp = fopen($counterFile, "w");
-                    fputs($fp, $num, 10);
-                    fclose($fp);
-                    if ($num % 20 == 0 && $num > 10) {
-                        $fp = fopen($counterBackupFile, "w");
-                        fputs($fp, $num, 10);
-                        fclose($fp);
-                    }
-                }
-                echo "$num"." 人次";
-            }
-
-            if (!file_exists($counterFile)) {
-                fopen($counterFile, "w");
-                fputs($fp, 0, 10);
-                fclose($fp);
-            }
-            if (!file_exists($counterBackupFile)) {
-                fopen($counterBackupFile, "w");
-                fputs($fp, 0, 10);
-                fclose($fp);
-            }
-
-            displayCounter($counterFile, $counterBackupFile);
-        ?></li>
-    </ul>
-</div>
-</div>
+<!--左侧菜单栏-->
+<div id="left">
+  <div class="os">
+    index.php
+  </div><!--os-->
+  <div class="navi">
+    <?php
+      /*
+      wp_nav_menu( $args )
+      @参数 array $args, 传递此参数时用array(成员参数名=>成员参数值)
+      特别说明：
+      调用导航菜单时，可以直接复制以下代码。然后根据需要删除成员参数
+      */
+      wp_nav_menu( array(
+        'theme_location'				=> 'daniot-leftmenu',	//[保留]调用左侧导航菜单
+        'container'							=> false,							//[可删]
+        'before'								=> '',								//[可删]
+        'after'									=> '',								//[可删]		
+        'link_before'						=> '',								//[可删]
+        'link_after'						=> '',							  //[可删]
+        'depth'								  => 3,								//[可删]
+      ) );
+    ?>
+  </div><!--navi-->
+  <!--左侧广告栏-->
+  <div style="display: inline-block; width: 100%; font-size: 
+              12px; text-align: center; background-color: #e6e6fa; 
+              border-bottom: 1px solid #696969; border-top: 2px solid #e6e6fa;">赞助商链接</div>
+    <div id="bann">
+      <script async="" src="static/js/adsbygoogle-ca-pub-6423793798099903.js" crossorigin="anonymous"></script>
+      <!-- 160x600 -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6423793798099903" data-ad-slot="6315121180" data-ad-format="auto"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div><!--左侧广告栏-->
+</div><!--左侧菜单栏-->

@@ -1,4 +1,5 @@
 <!-- 广告页面配置 -->
+<div style="width: 100%; border-top: 1px #696969 solid; margin-left: auto; margin-right: auto; text-align:center; background-color: #e6e6fa; letter-spacing: 10px;">Matched Content</div>
   <div style="width: 100%; border-top: 1px #696969 solid; padding-top: 20px; padding-bottom: 20px;">
     <div style="width: 98%; margin-left: auto; margin-right: auto; text-align:center;">
       <script async="" src="static/js/adsbygoogle1.js"></script>

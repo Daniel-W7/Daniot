@@ -46,25 +46,17 @@ function lingfeng_wp_title($title, $sep) {
 
 	return $title;	
 }
-//WordPress获取站点总浏览量
-function all_view() /*注意这个函数名，调用的就是用它了*/
+
+//WordPress获取当前在线人数:{$online_count},今日访问量：{$today_count},昨日访问量：{$yesterday_count},本月访问量：{$month_count},总访问量：{$total_count}
+function view_count() /*注意这个函数名，调用的就是用它了*/
 {
-global $wpdb;
-$count=0;
-$views= $wpdb->get_results("SELECT * FROM $wpdb->postmeta WHERE meta_key='views'");
-foreach($views as $key=>$value)
-{
-$meta_value=$value->meta_value;
-if($meta_value!=' ')
-{
-$count+=(int)$meta_value;}
-}
-return $count;}
-//WordPress获取站点当前在线人数
-function show_online_count() {
+	$online_log = dirname(__FILE__).'/static/online_log.dat'; //保存在线人数的统计文件到对应目录,
+	$count_log = dirname(__FILE__).'/static/count_log.dat';//保存月日的统计文件到对应目录,
+
+	//WordPress获取站点当前在线人数
 	//首先你要有读写文件的权限，首次访问肯不显示，正常情况刷新即可  
-	$online_log = "/var/www/html/wp-content/themes/test/static/maplers.dat"; //保存人数的文件到根目录,  
-	$timeout = 120;//30秒内没动作者,认为掉线  
+	  
+	$timeout = 120;//120秒内没动作者,认为掉线  
 	$entries = file($online_log);
 	$temp = array();
 	for ($i=0;$i<count($entries);$i++){
@@ -73,7 +65,7 @@ function show_online_count() {
 	array_push($temp,$entry[0].",".$entry[1]."\n"); //取出其他浏览者的信息,并去掉超时者,保存进$temp  
 	}}
 	array_push($temp,getenv('REMOTE_ADDR').",".(time() + ($timeout))."\n"); //更新浏览者的时间  
-	$maplers = count($temp); //计算在线人数  
+	$online_count = count($temp); //计算在线人数  
 	$entries = implode("",$temp);
 	//写入文件  
 	$fp = fopen($online_log,"w");
@@ -81,7 +73,54 @@ function show_online_count() {
 	fputs($fp,$entries);
 	flock($fp,LOCK_UN);
 	fclose($fp);
-	return $maplers;
+
+	//WordPress获取站点总访问量：{$total_count},
+	global $wpdb;
+	$total_count=0;
+	$views= $wpdb->get_results("SELECT * FROM $wpdb->postmeta WHERE meta_key='views'");
+	foreach($views as $key=>$value)
+	{
+	$meta_value=$value->meta_value;
+	if($meta_value!=' ')
+	{
+	$total_count+=(int)$meta_value;}
+	}
+
+	//WordPress获取今日访问量：{$today_count},昨日访问量：{$yesterday_count},本月访问量：{$month_count},总访问量：{$total_count}
+	
+	//$data = unserialize(file_get_contents($file));
+	$fp=fopen($count_log,'r+');
+	$content='';
+	if (flock($fp,LOCK_EX)){
+		while (($buffer=fgets($fp,1024))!=false){
+			$content=$content.$buffer;
+		}
+		$data=unserialize($content);
+		//设置记录键值
+		$month_count = date('Ym');
+		$today_count = date('Ymd');
+		$yesterday_count = date('Ymd',strtotime("-1 day"));
+		$tongji = array();
+		// 本月访问量增加
+		$tongji[$month_count] = $data[$month_count] + 1;
+		// 今日访问增加
+		$tongji[$today_count] = $data[$today_count] + 1;
+		//保持昨天访问
+		$tongji[$yesterday_count] = $data[$yesterday_count];
+		//保存统计数据
+		ftruncate($fp,0); // 将文件截断到给定的长度
+		rewind($fp); // 倒回文件指针的位置
+		fwrite($fp, serialize($tongji));
+		flock($fp,LOCK_UN);
+		fclose($fp);
+		//输出数据
+		$month_count = $tongji[$month_count];
+		$today_count= $tongji[$today_count];
+		$yesterday_count = $tongji[$yesterday_count]?$tongji[$yesterday_count]:0;
+		echo "当前在线人数:{$online_count},今日访问量：{$today_count},总访问量：{$total_count} ";
+		//echo "当前在线人数:{$online_count},今日访问量：{$today_count},昨日访问量：{$yesterday_count},本月访问量：{$month_count},总访问量：{$total_count} ";
+		//echo "document.write('总访问量：{$total_count}, 本月访问量：{$month_count}, 昨日访问量：{$yesterday_count}, 今日访问量：{$today_count}');";
+	}
 }
 
 /**
