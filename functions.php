@@ -176,6 +176,7 @@ function daniot_pagenavi( $range = 4 ) {
 }
 
 //默认搜索伪静态
+/*
 function wp_search_url_rewrite() {
     if ( is_search() && ! empty( $_GET['s'] ) ) {
         wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) . "/");
@@ -183,6 +184,5 @@ function wp_search_url_rewrite() {
     }
 }
 add_action( 'template_redirect', 'wp_search_url_rewrite' );
-
-
+*/
 ?>

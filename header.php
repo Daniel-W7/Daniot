@@ -228,7 +228,7 @@ hs.wrapperClassName = 'draggable-header';
 <!--内容栏-->
 <div id="contents">
 <!--判断使首页的话只显示网站标题和RSS订阅配置，不是首页的话，只显示文章标题和文章时间-->
-<?php if(is_home() || is_front_page()) { ?>
+<?php if(is_home() || is_front_page() || is_search()) { ?>
   <!--网站标题和RSS订阅配置-->
   <table style="width: 96%; line-height: 1.5; margin-top: 10px; margin-bottom: 10px; margin-left: auto; margin-right: auto;">
     <tr>
