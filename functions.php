@@ -117,7 +117,7 @@ function view_count() /*注意这个函数名，调用的就是用它了*/
 		$month_count = $tongji[$month_count];
 		$today_count= $tongji[$today_count];
 		$yesterday_count = $tongji[$yesterday_count]?$tongji[$yesterday_count]:0;
-		echo "当前在线人数:{$online_count},今日访问量：{$today_count},总访问量：{$total_count} ";
+		echo "在线:{$online_count},今日:{$today_count},总:{$total_count}";
 		//echo "当前在线人数:{$online_count},今日访问量：{$today_count},昨日访问量：{$yesterday_count},本月访问量：{$month_count},总访问量：{$total_count} ";
 		//echo "document.write('总访问量：{$total_count}, 本月访问量：{$month_count}, 昨日访问量：{$yesterday_count}, 今日访问量：{$today_count}');";
 	}
@@ -174,6 +174,15 @@ function daniot_pagenavi( $range = 4 ) {
 		echo "</div>\n";  
 	}
 }
+
+//默认搜索伪静态
+function wp_search_url_rewrite() {
+    if ( is_search() && ! empty( $_GET['s'] ) ) {
+        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) . "/");
+        exit();
+    }
+}
+add_action( 'template_redirect', 'wp_search_url_rewrite' );
 
 
 ?>
