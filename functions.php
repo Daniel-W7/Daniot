@@ -100,7 +100,7 @@ function view_count() /*注意这个函数名，调用的就是用它了*/
 		$month_count = date('Ym');
 		$today_count = date('Ymd');
 		$yesterday_count = date('Ymd',strtotime("-1 day"));
-		$tongji = array();
+		$tongji = array($month_count,$today_count,$yesterday_count);
 		// 本月访问量增加
 		$tongji[$month_count] = $data[$month_count] + 1;
 		// 今日访问增加
