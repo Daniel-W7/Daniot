@@ -189,7 +189,7 @@ hs.wrapperClassName = 'draggable-header';
 <div id="top-menu">
   <table id="menu-table">
     <tr>
-      <td class="menu" style="min-width:80px;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
+      <td class="menu" style="width: 15%;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
       <td class="menu">
         <div class="top_navi">
         <?php
@@ -211,7 +211,7 @@ hs.wrapperClassName = 'draggable-header';
         ?>
         </div>
       </td>
-      <td class="menu" style="min-width:150px;">
+      <td class="menu" style="width: 16%;">
         <div class="count"><?php view_count();?></div>
       </td>
     </tr>
@@ -236,9 +236,6 @@ hs.wrapperClassName = 'draggable-header';
       
         </div><!--subject-->
         
-      </td>
-      <td>
-        <?php get_search_form(); ?>
       </td>
     </tr>
   </table><!--内容标题和RSS订阅配置-->

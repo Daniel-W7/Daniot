@@ -180,7 +180,7 @@ pre {
 }
 .base {
     width: 96%;
-    background: url(../image/bgcom.gif);
+    background: url(./static/image/bgcom.gif);
     line-height: 1.5;
     font-size: 14px;
     font-family: Tahoma, Arial, sans-serif;
