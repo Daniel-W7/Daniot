@@ -58,6 +58,13 @@ pre {
     border-right: #aaaaaa 1px solid;
     text-align: center;
 }
+.menu li {
+	float:left;
+    text-align: center;
+    border-right: #aaaaaa 1px solid;
+    min-width:150px;
+}
+.menu li:last-child{border:none;}
 .menu a {
     display: block;
     color: #8b4513;

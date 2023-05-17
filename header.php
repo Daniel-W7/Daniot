@@ -194,7 +194,7 @@ hs.wrapperClassName = 'draggable-header';
   <table id="menu-table">
     <tr>
       <td class="menu" style="width: 15%;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
-      <td class="menu">
+      <td class="menu" style="width: 70%;">
         <div class="top_navi">
         <?php
           /*
@@ -215,9 +215,7 @@ hs.wrapperClassName = 'draggable-header';
         ?>
         </div>
       </td>
-      <td class="menu"><a href="note-policy.html">隐私策略</a></td>
-      <td class="menu"><a href="note-send.html">支持/联系我们</a></td>
-      <td class="menu" style="width: 16%;">
+      <td class="menu" style="width: 15%;">
         <div class="count"><?php view_count();?></div>
       </td>
     </tr>
