@@ -3,12 +3,8 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="keywords" content="CentOS,Ubuntu,Fedora,Debian,Linux,KVM,Virtualization">
-<meta name="description" content="The site for people who would like to build Network Servers with CentOS, Ubuntu, Fedora, Debian, Windows Server.">
 <title><?php wp_title('-', true, 'right'); ?></title>
-<link href="<?php echo get_template_directory_uri(); ?>/static/css/base.css" media="screen" rel="stylesheet" type="text/css">
-<link href="<?php echo get_template_directory_uri(); ?>/static/css/navi.css" media="screen" rel="stylesheet" type="text/css">
-<link href="<?php echo get_template_directory_uri(); ?>/static/css/main.css" media="screen" rel="stylesheet" type="text/css">
+<link href="<?php echo get_template_directory_uri(); ?>/style.css" media="screen" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/static/js/popup.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="<?php echo get_template_directory_uri(); ?>/static/js/js-G-ZE66RTNTHG.js"></script>
@@ -193,8 +189,8 @@ hs.wrapperClassName = 'draggable-header';
 <div id="top-menu">
   <table id="menu-table">
     <tr>
-      <td class="menu" style="width: 15%;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
-      <td class="menu" style="width: 70%;">
+      <td class="menu" style="min-width:80px;"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></td>
+      <td class="menu">
         <div class="top_navi">
         <?php
           /*
@@ -215,7 +211,7 @@ hs.wrapperClassName = 'draggable-header';
         ?>
         </div>
       </td>
-      <td class="menu" style="width: 15%;">
+      <td class="menu" style="min-width:150px;">
         <div class="count"><?php view_count();?></div>
       </td>
     </tr>
