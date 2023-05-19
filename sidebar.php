@@ -25,7 +25,7 @@
    
   <div style="display: inline-block; width: 100%; font-size: 
               12px; text-align: center; background-color: #e6e6fa; 
-              border-bottom: 1px solid #696969; border-top: 2px solid #e6e6fa;">赞助商链接</div>
+              border-bottom: 1px solid #696969; border-top: 2px solid #e6e6fa;">面朝大海，拥抱开源</div>
  <!--左侧广告栏
     <div id="bann">
       <script async="" src="static/js/adsbygoogle-ca-pub-6423793798099903.js" crossorigin="anonymous"></script>-->

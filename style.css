@@ -90,6 +90,7 @@ pre {
     min-width:150px;
 }
 .menu li:last-child{border:none;}
+.sub-menu li:last-child{border-right:#aaaaaa 1px solid;}
 .menu a {
     display: block;
     color: #8b4513;
@@ -449,12 +450,13 @@ a.highslide-credits:hover i {
 .top_navi ul li a:hover ul {
     visibility: visible;
     position: absolute;
-    width: 220px;
+    width: 150px;
     height: auto;
     border: #aaaaaa 1px solid;
     background: #f5f5dc;
     overflow:visible;
 }
+
 .top_navi ul li:hover ul li a,
 .top_navi ul li a:hover ul li a {
     display: block;

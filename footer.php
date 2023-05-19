@@ -1,5 +1,5 @@
-<div style="width: 100%; border-top: 1px #696969 solid; margin-left: auto; margin-right: auto; text-align:center; background-color: #e6e6fa; letter-spacing: 10px;">赞助商链接</div>
- <!-- 广告页面配置 <div style="width: 100%; border-top: 1px #696969 solid; padding-top: 20px; padding-bottom: 20px;">
+ <!-- 广告页面配置<div style="width: 100%; border-top: 1px #696969 solid; margin-left: auto; margin-right: auto; text-align:center; background-color: #e6e6fa; letter-spacing: 10px;">赞助商链接</div>
+ <div style="width: 100%; border-top: 1px #696969 solid; padding-top: 20px; padding-bottom: 20px;">
     <div style="width: 98%; margin-left: auto; margin-right: auto; text-align:center;">
       <script async="" src="static/js/adsbygoogle1.js"></script>
       <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-6423793798099903" data-ad-slot="5098595898"></ins>
